@@ -1,0 +1,797 @@
+// Complete Prisma Schema for Events & Challenges Platform
+// Updated with Teams, Submissions, Challenges, and Gamification
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+// ================================
+// CORE MODELS
+// ================================
+
+model User {
+  id                 String    @id @default(uuid())
+  email              String    @unique
+  fullName           String    @map("full_name")
+  whatsapp           String?
+  gender             String?
+  graduation         String?
+  specialization     String?
+  year               String?
+  regNumber          String?   @map("reg_number")
+  skills             Json?     // Array of skills
+  domain             String?
+  githubUrl          String?   @map("github_url")
+  codingUrl          String?   @map("coding_url")
+  profilePicture     String?   @map("profile_picture")
+  
+  // Gamification
+  totalPoints        Int       @default(0) @map("total_points")
+  currentStreak      Int       @default(0) @map("current_streak")
+  longestStreak      Int       @default(0) @map("longest_streak")
+  level              Int       @default(1)
+  
+  createdAt          DateTime  @default(now()) @map("created_at")
+  updatedAt          DateTime  @updatedAt @map("updated_at")
+  lastActive         DateTime? @map("last_active")
+  
+  // Relations
+  eventRegistrations EventRegistration[]
+  teamsLeading       Team[]              @relation("TeamLeader")
+  teamMemberships    TeamMember[]
+  teamJoinRequests   TeamJoinRequest[]
+  submissions        EventSubmission[]
+  challengeProgress  UserChallengeProgress[]
+  taskCompletions    UserTaskCompletion[]
+  badges             UserBadge[]
+  achievements       UserAchievement[]
+  leaderboardEntries Leaderboard[]
+  eventsCreated      Event[]             @relation("EventCreator")
+  challengesCreated  Challenge[]         @relation("ChallengeCreator")
+  certificates       Certificate[]
+  emailsSent         EmailLog[]
+  
+  @@map("users")
+}
+
+model EventCategory {
+  id          String   @id @default(uuid())
+  name        String   @unique
+  slug        String   @unique
+  description String?  @db.Text
+  icon        String?  // Lucide icon name
+  color       String?  // Hex color
+  parentId    String?  @map("parent_id")
+  
+  parent      EventCategory?  @relation("CategoryHierarchy", fields: [parentId], references: [id])
+  children    EventCategory[] @relation("CategoryHierarchy")
+  events      Event[]
+  eventTypes  EventType[]
+  
+  createdAt   DateTime @default(now()) @map("created_at")
+  
+  @@map("event_categories")
+}
+
+model EventType {
+  id                   String         @id @default(uuid())
+  categoryId           String         @map("category_id")
+  name                 String
+  slug                 String         @unique
+  description          String?        @db.Text
+  defaultDurationHours Int?           @map("default_duration_hours")
+  
+  category             EventCategory  @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  
+  createdAt            DateTime       @default(now()) @map("created_at")
+  
+  @@unique([categoryId, slug])
+  @@map("event_types")
+}
+
+// ================================
+// EVENT SYSTEM
+// ================================
+
+model Event {
+  id                      String    @id @default(uuid())
+  title                   String
+  slug                    String    @unique
+  description             String    @db.Text
+  categoryId              String    @map("category_id")
+  
+  // Event Type
+  eventType               String    @map("event_type")
+  mode                    String    // online, offline, hybrid
+  
+  // Registration
+  registrationStart       DateTime  @map("registration_start")
+  registrationEnd         DateTime  @map("registration_end")
+  maxParticipants         Int?      @map("max_participants")
+  
+  // Team Settings
+  isTeamEvent             Boolean   @default(false) @map("is_team_event")
+  allowIndividual         Boolean   @default(true) @map("allow_individual")
+  minTeamSize             Int       @default(1) @map("min_team_size")
+  maxTeamSize             Int       @default(4) @map("max_team_size")
+  teamFormationDeadline   DateTime? @map("team_formation_deadline")
+  restrictSameCollege     Boolean   @default(false) @map("restrict_same_college")
+  
+  // Event Timeline
+  eventStart              DateTime  @map("event_start")
+  eventEnd                DateTime  @map("event_end")
+  
+  // Payment
+  isPaid                  Boolean   @default(false) @map("is_paid")
+  registrationFee         Decimal?  @map("registration_fee") @db.Decimal(10, 2)
+  currency                String    @default("INR")
+  
+  // Submission Settings
+  hasSubmission           Boolean   @default(false) @map("has_submission")
+  submissionStart         DateTime? @map("submission_start")
+  submissionDeadline      DateTime? @map("submission_deadline")
+  submissionTemplateUrl   String?   @map("submission_template_url")
+  
+  // Details
+  rules                   String?   @db.Text
+  eligibility             String?   @db.Text
+  rewards                 String?   @db.Text
+  prizes                  Json?     // JSON object
+  
+  // Resources
+  venue                   String?
+  meetingLink             String?   @map("meeting_link")
+  resourceLinks           Json?     @map("resource_links")
+  
+  // Media
+  bannerImage             String?   @map("banner_image")
+  images                  Json?     // Array of image URLs
+  
+  // Status
+  status                  String    @default("draft") // draft, published, ongoing, completed, cancelled
+  isFeatured              Boolean   @default(false) @map("is_featured")
+  
+  // Roadmap Integration
+  hasRoadmap              Boolean   @default(false) @map("has_roadmap")
+  roadmapId               String?   @map("roadmap_id")
+  
+  // Challenges
+  hasChallenges           Boolean   @default(false) @map("has_challenges")
+  problemCount            Int       @default(0) @map("problem_count")
+  
+  // Admin
+  createdBy               String?   @map("created_by")
+  createdAt               DateTime  @default(now()) @map("created_at")
+  updatedAt               DateTime  @updatedAt @map("updated_at")
+  
+  // Relations
+  category                EventCategory       @relation(fields: [categoryId], references: [id])
+  creator                 User?               @relation("EventCreator", fields: [createdBy], references: [id])
+  roadmap                 Roadmap?            @relation(fields: [roadmapId], references: [id])
+  registrations           EventRegistration[]
+  teams                   Team[]
+  submissions             EventSubmission[]
+  eventChallenges         EventChallenge[]
+  emailLogs               EmailLog[]
+  certificates            Certificate[]
+  
+  @@index([categoryId])
+  @@index([status])
+  @@index([eventStart, eventEnd])
+  @@map("events")
+}
+
+// ================================
+// TEAM SYSTEM
+// ================================
+
+model Team {
+  id              String         @id @default(uuid())
+  eventId         String         @map("event_id")
+  teamName        String         @map("team_name")
+  teamLeaderId    String         @map("team_leader_id")
+  
+  isComplete      Boolean        @default(false) @map("is_complete")
+  isLocked        Boolean        @default(false) @map("is_locked")
+  collegeName     String?        @map("college_name")
+  
+  createdAt       DateTime       @default(now()) @map("created_at")
+  updatedAt       DateTime       @updatedAt @map("updated_at")
+  
+  // Relations
+  event           Event          @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  leader          User           @relation("TeamLeader", fields: [teamLeaderId], references: [id])
+  members         TeamMember[]
+  joinRequests    TeamJoinRequest[]
+  registrations   EventRegistration[]
+  submissions     EventSubmission[]
+  certificates    Certificate[]
+  
+  @@unique([eventId, teamName])
+  @@index([eventId])
+  @@index([teamLeaderId])
+  @@map("teams")
+}
+
+model TeamMember {
+  id         String    @id @default(uuid())
+  teamId     String    @map("team_id")
+  userId     String    @map("user_id")
+  
+  isLeader   Boolean   @default(false) @map("is_leader")
+  status     String    @default("active") // active, left, removed
+  
+  joinedAt   DateTime  @default(now()) @map("joined_at")
+  leftAt     DateTime? @map("left_at")
+  
+  // Relations
+  team       Team      @relation(fields: [teamId], references: [id], onDelete: Cascade)
+  user       User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  @@unique([teamId, userId])
+  @@index([teamId])
+  @@index([userId])
+  @@map("team_members")
+}
+
+model TeamJoinRequest {
+  id              String    @id @default(uuid())
+  teamId          String    @map("team_id")
+  userId          String    @map("user_id")
+  
+  requestType     String    @map("request_type") // sent (user requests), received (team invites)
+  status          String    @default("pending") // pending, accepted, rejected, cancelled
+  
+  message         String?   @db.Text
+  responseMessage String?   @map("response_message") @db.Text
+  
+  createdAt       DateTime  @default(now()) @map("created_at")
+  respondedAt     DateTime? @map("responded_at")
+  
+  // Relations
+  team            Team      @relation(fields: [teamId], references: [id], onDelete: Cascade)
+  user            User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  @@unique([teamId, userId])
+  @@index([teamId])
+  @@index([userId])
+  @@index([status])
+  @@map("team_join_requests")
+}
+
+// ================================
+// REGISTRATION & SUBMISSION
+// ================================
+
+model EventRegistration {
+  id                String    @id @default(uuid())
+  eventId           String    @map("event_id")
+  userId            String    @map("user_id")
+  
+  teamId            String?   @map("team_id")
+  participationType String    @default("individual") @map("participation_type") // individual, team
+  
+  // Payment
+  paymentStatus     String    @default("pending") @map("payment_status") // pending, completed, failed
+  paymentId         String?   @map("payment_id")
+  amountPaid        Decimal?  @map("amount_paid") @db.Decimal(10, 2)
+  paidAt            DateTime? @map("paid_at")
+  
+  // Status (AUTO CONFIRMED - no approval needed)
+  status            String    @default("confirmed") // confirmed, cancelled
+  
+  registeredAt      DateTime  @default(now()) @map("registered_at")
+  cancelledAt       DateTime? @map("cancelled_at")
+  
+  // Relations
+  event             Event     @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  user              User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  team              Team?     @relation(fields: [teamId], references: [id])
+  
+  @@unique([eventId, userId])
+  @@index([eventId])
+  @@index([userId])
+  @@index([teamId])
+  @@map("event_registrations")
+}
+
+model EventSubmission {
+  id                   String    @id @default(uuid())
+  eventId              String    @map("event_id")
+  userId               String    @map("user_id")
+  teamId               String?   @map("team_id")
+  
+  // Submission Files & Links
+  projectDeckUrl       String?   @map("project_deck_url")
+  presentationPdfUrl   String?   @map("presentation_pdf_url")
+  mvpLink              String?   @map("mvp_link")
+  demoVideoUrl         String?   @map("demo_video_url")
+  githubRepoUrl        String?   @map("github_repo_url")
+  
+  // Tech Stack
+  technologiesUsed     String?   @map("technologies_used") @db.VarChar(256)
+  aiToolsIntegrated    String?   @map("ai_tools_integrated") @db.VarChar(256)
+  
+  // Description
+  solutionDescription  String?   @map("solution_description") @db.VarChar(1000)
+  
+  // Evaluation
+  score                Decimal?  @db.Decimal(10, 2)
+  rank                 Int?
+  feedback             String?   @db.Text
+  
+  // Status
+  status               String    @default("submitted") // draft, submitted, evaluated
+  
+  submittedAt          DateTime  @default(now()) @map("submitted_at")
+  updatedAt            DateTime  @updatedAt @map("updated_at")
+  evaluatedAt          DateTime? @map("evaluated_at")
+  
+  // Relations
+  event                Event     @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  user                 User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  team                 Team?     @relation(fields: [teamId], references: [id])
+  
+  @@unique([eventId, userId])
+  @@unique([eventId, teamId])
+  @@index([eventId])
+  @@index([userId])
+  @@index([teamId])
+  @@map("event_submissions")
+}
+
+// ================================
+// CHALLENGE SYSTEM
+// ================================
+
+model Challenge {
+  id                  String    @id @default(uuid())
+  title               String
+  slug                String    @unique
+  description         String    @db.Text
+  
+  challengeType       String    @map("challenge_type") // daily, weekly, monthly, long_term
+  difficulty          String    // beginner, intermediate, advanced
+  
+  durationDays        Int       @map("duration_days")
+  startDate           DateTime  @map("start_date") @db.Date
+  endDate             DateTime  @map("end_date") @db.Date
+  
+  category            String?
+  tags                Json?
+  
+  // Gamification
+  pointsPerDay        Int       @default(10) @map("points_per_day")
+  bonusPoints         Json?     @map("bonus_points")
+  badges              Json?
+  
+  hasLeaderboard      Boolean   @default(true) @map("has_leaderboard")
+  isPublic            Boolean   @default(true) @map("is_public")
+  maxParticipants     Int?      @map("max_participants")
+  
+  bannerImage         String?   @map("banner_image")
+  icon                String?
+  
+  status              String    @default("active") // draft, active, completed, archived
+  
+  totalParticipants   Int       @default(0) @map("total_participants")
+  activeParticipants  Int       @default(0) @map("active_participants")
+  completionRate      Decimal?  @map("completion_rate") @db.Decimal(5, 2)
+  
+  createdBy           String?   @map("created_by")
+  createdAt           DateTime  @default(now()) @map("created_at")
+  updatedAt           DateTime  @updatedAt @map("updated_at")
+  
+  // Relations
+  creator             User?                   @relation("ChallengeCreator", fields: [createdBy], references: [id])
+  tasks               ChallengeTask[]
+  userProgress        UserChallengeProgress[]
+  eventChallenges     EventChallenge[]
+  
+  @@index([challengeType])
+  @@index([status])
+  @@index([startDate, endDate])
+  @@map("challenges")
+}
+
+model ChallengeTask {
+  id             String    @id @default(uuid())
+  challengeId    String    @map("challenge_id")
+  
+  dayNumber      Int       @map("day_number")
+  title          String
+  description    String?   @db.Text
+  
+  taskType       String    @map("task_type") // problem, quiz, video, reading, project
+  content        Json?     // Flexible JSON structure
+  
+  resourceLinks  Json?     @map("resource_links")
+  hints          Json?
+  
+  difficulty     String?
+  points         Int       @default(10)
+  
+  autoValidate   Boolean   @default(false) @map("auto_validate")
+  validationUrl  String?   @map("validation_url")
+  
+  createdAt      DateTime  @default(now()) @map("created_at")
+  
+  // Relations
+  challenge      Challenge            @relation(fields: [challengeId], references: [id], onDelete: Cascade)
+  completions    UserTaskCompletion[]
+  
+  @@unique([challengeId, dayNumber])
+  @@index([challengeId])
+  @@map("challenge_tasks")
+}
+
+model UserChallengeProgress {
+  id                    String    @id @default(uuid())
+  userId                String    @map("user_id")
+  challengeId           String    @map("challenge_id")
+  
+  status                String    @default("active") // active, completed, paused, dropped
+  completedDays         Int       @default(0) @map("completed_days")
+  totalDays             Int       @map("total_days")
+  completionPercentage  Decimal   @default(0) @map("completion_percentage") @db.Decimal(5, 2)
+  
+  currentStreak         Int       @default(0) @map("current_streak")
+  longestStreak         Int       @default(0) @map("longest_streak")
+  lastCompletedDate     DateTime? @map("last_completed_date") @db.Date
+  
+  totalPoints           Int       @default(0) @map("total_points")
+  bonusPoints           Int       @default(0) @map("bonus_points")
+  currentRank           Int?      @map("current_rank")
+  
+  startedAt             DateTime  @default(now()) @map("started_at")
+  lastActivity          DateTime  @default(now()) @map("last_activity")
+  completedAt           DateTime? @map("completed_at")
+  
+  certificateIssued     Boolean   @default(false) @map("certificate_issued")
+  certificateUrl        String?   @map("certificate_url")
+  
+  completedTaskIds      Json?     @map("completed_task_ids")
+  skippedTaskIds        Json?     @map("skipped_task_ids")
+  
+  // Relations
+  user                  User                 @relation(fields: [userId], references: [id], onDelete: Cascade)
+  challenge             Challenge            @relation(fields: [challengeId], references: [id], onDelete: Cascade)
+  taskCompletions       UserTaskCompletion[]
+  
+  @@unique([userId, challengeId])
+  @@index([userId])
+  @@index([challengeId])
+  @@index([status])
+  @@map("user_challenge_progress")
+}
+
+model UserTaskCompletion {
+  id            String    @id @default(uuid())
+  userId        String    @map("user_id")
+  challengeId   String    @map("challenge_id")
+  taskId        String    @map("task_id")
+  progressId    String    @map("progress_id")
+  
+  completedAt   DateTime  @default(now()) @map("completed_at")
+  timeTaken     Int?      @map("time_taken") // seconds
+  
+  submissionUrl  String?   @map("submission_url")
+  submissionText String?   @map("submission_text") @db.Text
+  submissionFiles Json?    @map("submission_files")
+  
+  isVerified    Boolean   @default(false) @map("is_verified")
+  verifiedBy    String?   @map("verified_by")
+  verifiedAt    DateTime? @map("verified_at")
+  
+  score         Decimal?  @db.Decimal(10, 2)
+  pointsEarned  Int?      @map("points_earned")
+  
+  userNotes     String?   @map("user_notes") @db.Text
+  feedback      String?   @db.Text
+  
+  // Relations
+  user          User                  @relation(fields: [userId], references: [id], onDelete: Cascade)
+  task          ChallengeTask         @relation(fields: [taskId], references: [id], onDelete: Cascade)
+  progress      UserChallengeProgress @relation(fields: [progressId], references: [id], onDelete: Cascade)
+  
+  @@unique([userId, taskId])
+  @@index([userId])
+  @@index([challengeId])
+  @@map("user_task_completions")
+}
+
+// ================================
+// GAMIFICATION
+// ================================
+
+model UserBadge {
+  id                   String    @id @default(uuid())
+  userId               String    @map("user_id")
+  
+  badgeType            String    @map("badge_type")
+  badgeName            String    @map("badge_name")
+  badgeDescription     String?   @map("badge_description") @db.Text
+  badgeIcon            String?   @map("badge_icon")
+  badgeColor           String?   @map("badge_color")
+  
+  relatedChallengeId   String?   @map("related_challenge_id")
+  relatedEventId       String?   @map("related_event_id")
+  
+  pointsAwarded        Int       @default(0) @map("points_awarded")
+  earnedAt             DateTime  @default(now()) @map("earned_at")
+  
+  // Relations
+  user                 User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  @@index([userId])
+  @@map("user_badges")
+}
+
+model UserAchievement {
+  id              String    @id @default(uuid())
+  userId          String    @map("user_id")
+  
+  achievementType String   @map("achievement_type")
+  achievementName String   @map("achievement_name")
+  description     String?  @db.Text
+  
+  value           Int?
+  target          Int?
+  
+  rarity          String?  // common, rare, epic, legendary
+  
+  earnedAt        DateTime @default(now()) @map("earned_at")
+  
+  // Relations
+  user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  @@unique([userId, achievementType])
+  @@map("user_achievements")
+}
+
+model Leaderboard {
+  id                String    @id @default(uuid())
+  userId            String    @map("user_id")
+  
+  leaderboardType   String    @map("leaderboard_type") // global, challenge, event, monthly
+  relatedId         String?   @map("related_id")
+  timePeriod        String?   @map("time_period") // weekly, monthly, all_time
+  
+  score             Int       @default(0)
+  rank              Int?
+  previousRank      Int?      @map("previous_rank")
+  
+  totalCompletions  Int       @default(0) @map("total_completions")
+  currentStreak     Int       @default(0) @map("current_streak")
+  
+  updatedAt         DateTime  @updatedAt @map("updated_at")
+  
+  // Relations
+  user              User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  @@unique([userId, leaderboardType, relatedId, timePeriod])
+  @@index([leaderboardType, relatedId])
+  @@index([rank])
+  @@map("leaderboards")
+}
+
+// ================================
+// INTEGRATION
+// ================================
+
+model EventChallenge {
+  eventId     String    @map("event_id")
+  challengeId String    @map("challenge_id")
+  
+  event       Event     @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  challenge   Challenge @relation(fields: [challengeId], references: [id], onDelete: Cascade)
+  
+  @@id([eventId, challengeId])
+  @@map("event_challenges")
+}
+
+// ================================
+// EXISTING MODELS (Keep as is)
+// ================================
+
+model Roadmap {
+  id          String         @id @default(uuid())
+  title       String
+  description String         @db.Text
+  roleTarget  String         @map("role_target")
+  createdAt   DateTime       @default(now()) @map("created_at")
+  
+  phases      RoadmapPhase[]
+  events      Event[]
+  
+  @@map("roadmaps")
+}
+
+model RoadmapPhase {
+  id          String          @id @default(uuid())
+  roadmapId   String          @map("roadmap_id")
+  order       Int
+  title       String
+  level       String?
+  duration    String?
+  description String?         @db.Text
+  
+  roadmap     Roadmap         @relation(fields: [roadmapId], references: [id], onDelete: Cascade)
+  sections    PhaseSection[]
+  playlists   PhasePlaylist[]
+  projects    PhaseProject[]
+  
+  @@map("roadmap_phases")
+}
+
+model PhaseSection {
+  id          String        @id @default(uuid())
+  phaseId     String        @map("phase_id")
+  title       String
+  description String?       @db.Text
+  order       Int           @default(0)
+  
+  phase       RoadmapPhase  @relation(fields: [phaseId], references: [id], onDelete: Cascade)
+  items       SectionItem[]
+  
+  @@map("phase_sections")
+}
+
+model SectionItem {
+  id          String        @id @default(uuid())
+  sectionId   String        @map("section_id")
+  title       String
+  order       Int           @default(0)
+  
+  section     PhaseSection  @relation(fields: [sectionId], references: [id], onDelete: Cascade)
+  subItems    SubItem[]
+  
+  @@map("section_items")
+}
+
+model SubItem {
+  id          String      @id @default(uuid())
+  itemId      String      @map("item_id")
+  title       String
+  videoUrl    String?     @map("video_url") @db.Text
+  duration    String?
+  order       Int         @default(0)
+  
+  item        SectionItem @relation(fields: [itemId], references: [id], onDelete: Cascade)
+  
+  @@map("sub_items")
+}
+
+model PhasePlaylist {
+  id          String        @id @default(uuid())
+  phaseId     String        @map("phase_id")
+  title       String
+  author      String?
+  videoCount  Int           @default(0) @map("video_count")
+  url         String        @db.Text
+  thumbnail   String?       @db.Text
+  
+  phase       RoadmapPhase  @relation(fields: [phaseId], references: [id], onDelete: Cascade)
+  
+  @@map("phase_playlists")
+}
+
+model PhaseProject {
+  id          String        @id @default(uuid())
+  phaseId     String        @map("phase_id")
+  title       String
+  description String?       @db.Text
+  tags        Json?
+  
+  phase       RoadmapPhase  @relation(fields: [phaseId], references: [id], onDelete: Cascade)
+  
+  @@map("phase_projects")
+}
+
+model DSASheet {
+  id          String     @id @default(uuid())
+  title       String
+  description String     @db.Text
+  level       String
+  createdAt   DateTime   @default(now()) @map("created_at")
+  
+  topics      DSATopic[]
+  
+  @@map("dsa_sheets")
+}
+
+model DSATopic {
+  id          String       @id @default(uuid())
+  title       String
+  sheetId     String       @map("sheet_id")
+  order       Int          @default(0)
+  
+  sheet       DSASheet     @relation(fields: [sheetId], references: [id], onDelete: Cascade)
+  problems    DSAProblem[]
+  
+  @@map("dsa_topics")
+}
+
+model DSAProblem {
+  id          String        @id @default(uuid())
+  title       String
+  description String?       @db.Text
+  difficulty  String
+  topicId     String        @map("topic_id")
+  order       Int           @default(0)
+  
+  topic       DSATopic      @relation(fields: [topicId], references: [id], onDelete: Cascade)
+  solutions   DSASolution[]
+  
+  @@map("dsa_problems")
+}
+
+model DSASolution {
+  id          String      @id @default(uuid())
+  language    String
+  code        String      @db.Text
+  problemId   String      @map("problem_id")
+  
+  problem     DSAProblem  @relation(fields: [problemId], references: [id], onDelete: Cascade)
+  
+  @@map("dsa_solutions")
+}
+
+// ================================
+// CERTIFICATE SYSTEM (NO FILE STORAGE)
+// ================================
+
+model Certificate {
+  id                String    @id @default(uuid())
+  certificateId     String    @unique @map("certificate_id")
+  
+  // Event & User
+  eventId           String    @map("event_id")
+  userId            String    @map("user_id")
+  teamId            String?   @map("team_id")
+  
+  // Certificate Data (metadata only - no PDF storage)
+  participantName   String    @map("participant_name")
+  position          String?   // 1st Place, 2nd Place, etc.
+  
+  issuedAt          DateTime  @default(now()) @map("issued_at")
+  
+  // Relations
+  event             Event     @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  user              User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  team              Team?     @relation(fields: [teamId], references: [id], onDelete: SetNull)
+  
+  @@index([eventId])
+  @@index([userId])
+  @@index([certificateId])
+  @@map("certificates")
+}
+
+// ================================
+// EMAIL COMMUNICATION LOGS
+// ================================
+
+model EmailLog {
+  id              String    @id @default(uuid())
+  eventId         String    @map("event_id")
+  
+  subject         String
+  message         String    @db.Text
+  recipientCount  Int       @map("recipient_count")
+  
+  sentBy          String    @map("sent_by")
+  sentAt          DateTime  @default(now()) @map("sent_at")
+  
+  // Relations
+  event           Event     @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  sender          User      @relation(fields: [sentBy], references: [id], onDelete: Cascade)
+  
+  @@index([eventId])
+  @@index([sentBy])
+  @@map("email_logs")
+}

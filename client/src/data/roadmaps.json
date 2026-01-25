@@ -1,0 +1,920 @@
+[
+    {
+        "id": "fullstack-backend-engineer-roadmap",
+        "roadmapName": "Full Stack / Backend Engineer Journey",
+        "totalDurationMonths": 8,
+        "levels": [
+            {
+                "level": "Beginner",
+                "phases": [
+                    {},
+                    {}
+                ]
+            },
+            {
+                "level": "Intermediate",
+                "phases": [
+                    {},
+                    {}
+                ]
+            },
+            {
+                "level": "Advanced",
+                "phases": [
+                    {},
+                    {},
+                    {}
+                ]
+            }
+        ],
+        "careerOutcome": [
+            "Full Stack Engineer",
+            "Backend Developer",
+            "System Architect"
+        ],
+        "isNew": true,
+        "description": "A visual, interactive journey from beginner to advanced covering backend, frontend, cloud, DevOps, and AI integration."
+    },
+    {
+        "id": "fullstack_roadmap",
+        "roadmapName": "Software Engineering Full Stack Roadmap",
+        "totalDurationMonths": 12,
+        "levels": [
+            {
+                "level": "Beginner",
+                "durationMonths": 4,
+                "phases": [
+                    {
+                        "phase": "Programming Fundamentals",
+                        "durationWeeks": 6,
+                        "goals": [
+                            "Understand how programming works",
+                            "Learn problem solving",
+                            "Write clean code"
+                        ],
+                        "topics": [
+                            "Variables, Data Types",
+                            "Loops, Conditions",
+                            "Functions",
+                            "Arrays, Strings, Objects",
+                            "Basic OOP Concepts",
+                            "Time Complexity Basics"
+                        ],
+                        "languages": [
+                            "JavaScript or Python"
+                        ],
+                        "resources": [
+                            {
+                                "type": "course",
+                                "name": "FreeCodeCamp JS / Python",
+                                "url": "https://www.freecodecamp.org"
+                            },
+                            {
+                                "type": "course",
+                                "name": "Namaste JavaScript",
+                                "url": "https://www.youtube.com"
+                            },
+                            {
+                                "type": "practice",
+                                "name": "LeetCode",
+                                "url": "https://leetcode.com"
+                            },
+                            {
+                                "type": "practice",
+                                "name": "HackerRank",
+                                "url": "https://hackerrank.com"
+                            },
+                            {
+                                "type": "book",
+                                "name": "Eloquent JavaScript",
+                                "url": "https://eloquentjavascript.net"
+                            }
+                        ],
+                        "projects": [
+                            "Calculator",
+                            "Number Guessing Game",
+                            "Todo CLI App"
+                        ]
+                    },
+                    {
+                        "phase": "Web Basics",
+                        "durationWeeks": 6,
+                        "topics": [
+                            "HTML",
+                            "CSS",
+                            "Flexbox, Grid",
+                            "Responsive Design",
+                            "Basic JavaScript DOM",
+                            "Git & GitHub"
+                        ],
+                        "resources": [
+                            {
+                                "type": "docs",
+                                "name": "MDN Web Docs",
+                                "url": "https://developer.mozilla.org"
+                            },
+                            {
+                                "type": "course",
+                                "name": "FreeCodeCamp Responsive Web",
+                                "url": "https://www.freecodecamp.org"
+                            },
+                            {
+                                "type": "practice",
+                                "name": "Frontend Mentor",
+                                "url": "https://frontendmentor.io"
+                            },
+                            {
+                                "type": "tool",
+                                "name": "GitHub",
+                                "url": "https://github.com"
+                            }
+                        ],
+                        "projects": [
+                            "Personal Portfolio Website",
+                            "Landing Page Clone",
+                            "Simple Blog UI"
+                        ],
+                        "tools": [
+                            "Git",
+                            "GitHub",
+                            "VS Code"
+                        ]
+                    }
+                ]
+            },
+            {
+                "level": "Intermediate",
+                "durationMonths": 5,
+                "phases": [
+                    {
+                        "phase": "Frontend Development",
+                        "durationWeeks": 8,
+                        "stack": [
+                            "React"
+                        ],
+                        "topics": [
+                            "Components",
+                            "State, Props",
+                            "Hooks",
+                            "Routing",
+                            "API Integration",
+                            "Authentication",
+                            "UI Libraries"
+                        ],
+                        "resources": [
+                            {
+                                "type": "docs",
+                                "name": "React Docs",
+                                "url": "https://react.dev"
+                            },
+                            {
+                                "type": "course",
+                                "name": "FreeCodeCamp React",
+                                "url": "https://www.freecodecamp.org"
+                            },
+                            {
+                                "type": "ui",
+                                "name": "MUI / Tailwind",
+                                "url": "https://mui.com"
+                            },
+                            {
+                                "type": "practice",
+                                "name": "Frontend Mentor",
+                                "url": "https://frontendmentor.io"
+                            }
+                        ],
+                        "projects": [
+                            "E-commerce Frontend",
+                            "Dashboard App",
+                            "Blog Platform"
+                        ]
+                    },
+                    {
+                        "phase": "Backend Development",
+                        "durationWeeks": 8,
+                        "stack": [
+                            "Node.js",
+                            "Express"
+                        ],
+                        "topics": [
+                            "REST APIs",
+                            "JWT Authentication",
+                            "Middleware",
+                            "MongoDB / SQL",
+                            "Mongoose / ORM",
+                            "File Upload",
+                            "Role Based Access"
+                        ],
+                        "resources": [
+                            {
+                                "type": "docs",
+                                "name": "Node.js Docs",
+                                "url": "https://nodejs.org"
+                            },
+                            {
+                                "type": "docs",
+                                "name": "Express Docs",
+                                "url": "https://expressjs.com"
+                            },
+                            {
+                                "type": "course",
+                                "name": "FreeCodeCamp Backend",
+                                "url": "https://www.freecodecamp.org"
+                            },
+                            {
+                                "type": "tool",
+                                "name": "Postman",
+                                "url": "https://postman.com"
+                            }
+                        ],
+                        "projects": [
+                            "User Management System",
+                            "Blog Backend",
+                            "Task Management API"
+                        ]
+                    },
+                    {
+                        "phase": "Databases",
+                        "durationWeeks": 4,
+                        "topics": [
+                            "MongoDB",
+                            "Indexes",
+                            "Aggregation",
+                            "Schema Design",
+                            "SQL Basics"
+                        ],
+                        "resources": [
+                            {
+                                "type": "docs",
+                                "name": "MongoDB Docs",
+                                "url": "https://mongodb.com/docs"
+                            },
+                            {
+                                "type": "course",
+                                "name": "MongoDB University",
+                                "url": "https://university.mongodb.com"
+                            },
+                            {
+                                "type": "practice",
+                                "name": "SQLZoo",
+                                "url": "https://sqlzoo.net"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "level": "Advanced",
+                "durationMonths": 3,
+                "phases": [
+                    {
+                        "phase": "System Design",
+                        "durationWeeks": 4,
+                        "topics": [
+                            "Scalability",
+                            "Load Balancing",
+                            "Caching",
+                            "Microservices",
+                            "Database Scaling",
+                            "API Design"
+                        ],
+                        "resources": [
+                            {
+                                "type": "course",
+                                "name": "Grokking System Design",
+                                "url": "https://designgurus.io"
+                            },
+                            {
+                                "type": "video",
+                                "name": "System Design Primer",
+                                "url": "https://github.com/donnemartin/system-design-primer"
+                            }
+                        ]
+                    },
+                    {
+                        "phase": "DevOps & Deployment",
+                        "durationWeeks": 4,
+                        "topics": [
+                            "Linux Basics",
+                            "Docker",
+                            "Nginx",
+                            "CI/CD",
+                            "AWS / Cloud",
+                            "PM2",
+                            "Monitoring with Prometheus & Grafana"
+                        ],
+                        "resources": [
+                            {
+                                "type": "docs",
+                                "name": "Docker Docs",
+                                "url": "https://docs.docker.com"
+                            },
+                            {
+                                "type": "docs",
+                                "name": "AWS Docs",
+                                "url": "https://docs.aws.amazon.com"
+                            },
+                            {
+                                "type": "docs",
+                                "name": "Grafana Docs",
+                                "url": "https://grafana.com/docs"
+                            },
+                            {
+                                "type": "docs",
+                                "name": "Prometheus Docs",
+                                "url": "https://prometheus.io/docs"
+                            }
+                        ],
+                        "projects": [
+                            "Deploy Full Stack App",
+                            "Setup CI/CD Pipeline",
+                            "Monitoring Dashboard"
+                        ]
+                    },
+                    {
+                        "phase": "DSA & Interview Prep",
+                        "durationWeeks": 4,
+                        "topics": [
+                            "Arrays, Strings, Linked List",
+                            "Stack, Queue",
+                            "Tree, Graph",
+                            "Recursion, DP",
+                            "Sliding Window",
+                            "Binary Search"
+                        ],
+                        "resources": [
+                            {
+                                "type": "practice",
+                                "name": "LeetCode",
+                                "url": "https://leetcode.com"
+                            },
+                            {
+                                "type": "practice",
+                                "name": "GeeksForGeeks",
+                                "url": "https://geeksforgeeks.org"
+                            },
+                            {
+                                "type": "book",
+                                "name": "Cracking the Coding Interview"
+                            }
+                        ],
+                        "practiceTarget": {
+                            "easy": 150,
+                            "medium": 150,
+                            "hard": 50
+                        }
+                    }
+                ]
+            }
+        ],
+        "capstoneProjects": [
+            {
+                "name": "Contest & Hackathon Platform",
+                "features": [
+                    "Authentication",
+                    "Admin Panel",
+                    "Student Dashboard",
+                    "Leaderboard",
+                    "Analytics",
+                    "Deployment",
+                    "Monitoring"
+                ],
+                "stack": [
+                    "React",
+                    "Node.js",
+                    "MongoDB",
+                    "AWS",
+                    "Docker",
+                    "Grafana"
+                ]
+            },
+            {
+                "name": "AI-based Intrusion Detection System",
+                "stack": [
+                    "Python",
+                    "ML",
+                    "Node.js",
+                    "Grafana",
+                    "Prometheus"
+                ]
+            }
+        ],
+        "careerOutcome": [
+            "Full Stack Developer",
+            "Backend Engineer",
+            "DevOps Engineer",
+            "Software Engineer"
+        ]
+    },
+    {
+        "id": "dsa_focused_roadmap",
+        "roadmapName": "Data Structures & Algorithms Mastery",
+        "totalDurationMonths": 6,
+        "levels": [
+            {
+                "level": "Beginner",
+                "durationMonths": 2,
+                "phases": [
+                    {
+                        "phase": "Programming Foundations",
+                        "durationWeeks": 4,
+                        "goals": [
+                            "Master basic programming constructs",
+                            "Understand time and space complexity",
+                            "Build problem-solving mindset"
+                        ],
+                        "topics": [
+                            "Variables, Data Types, Operators",
+                            "Conditionals and Loops",
+                            "Functions and Recursion Basics",
+                            "Big O Notation",
+                            "Space Complexity Analysis"
+                        ],
+                        "languages": [
+                            "C++",
+                            "Java",
+                            "Python"
+                        ],
+                        "resources": [
+                            {
+                                "type": "course",
+                                "name": "CS50 Introduction to CS",
+                                "url": "https://cs50.harvard.edu"
+                            },
+                            {
+                                "type": "book",
+                                "name": "Introduction to Algorithms (CLRS)"
+                            },
+                            {
+                                "type": "practice",
+                                "name": "HackerRank",
+                                "url": "https://hackerrank.com"
+                            }
+                        ],
+                        "projects": [
+                            "Pattern Printing Programs",
+                            "Number Theory Problems",
+                            "Basic Recursion Challenges"
+                        ]
+                    },
+                    {
+                        "phase": "Arrays & Strings",
+                        "durationWeeks": 4,
+                        "topics": [
+                            "Array Manipulation",
+                            "Two Pointer Technique",
+                            "Sliding Window",
+                            "String Operations",
+                            "Prefix Sum",
+                            "Kadane's Algorithm"
+                        ],
+                        "resources": [
+                            {
+                                "type": "practice",
+                                "name": "LeetCode Arrays",
+                                "url": "https://leetcode.com/tag/array"
+                            },
+                            {
+                                "type": "course",
+                                "name": "Abdul Bari Algorithms",
+                                "url": "https://www.youtube.com"
+                            },
+                            {
+                                "type": "practice",
+                                "name": "Codeforces",
+                                "url": "https://codeforces.com"
+                            }
+                        ],
+                        "practiceTarget": {
+                            "easy": 50,
+                            "medium": 30,
+                            "hard": 10
+                        }
+                    }
+                ]
+            },
+            {
+                "level": "Intermediate",
+                "durationMonths": 2,
+                "phases": [
+                    {
+                        "phase": "Advanced Data Structures",
+                        "durationWeeks": 4,
+                        "topics": [
+                            "Linked Lists (Single, Double, Circular)",
+                            "Stacks and Queues",
+                            "Hash Tables",
+                            "Binary Trees",
+                            "Binary Search Trees",
+                            "Heaps and Priority Queues"
+                        ],
+                        "resources": [
+                            {
+                                "type": "course",
+                                "name": "Striver's A2Z DSA Sheet",
+                                "url": "https://takeuforward.org"
+                            },
+                            {
+                                "type": "practice",
+                                "name": "LeetCode",
+                                "url": "https://leetcode.com"
+                            },
+                            {
+                                "type": "video",
+                                "name": "NeetCode Roadmap",
+                                "url": "https://neetcode.io"
+                            }
+                        ],
+                        "practiceTarget": {
+                            "easy": 40,
+                            "medium": 50,
+                            "hard": 20
+                        }
+                    },
+                    {
+                        "phase": "Graph & Tree Algorithms",
+                        "durationWeeks": 4,
+                        "topics": [
+                            "BFS and DFS",
+                            "Shortest Path (Dijkstra, Bellman-Ford)",
+                            "Minimum Spanning Tree",
+                            "Topological Sort",
+                            "Tree Traversals",
+                            "Lowest Common Ancestor"
+                        ],
+                        "resources": [
+                            {
+                                "type": "course",
+                                "name": "Graph Theory by William Fiset",
+                                "url": "https://www.youtube.com"
+                            },
+                            {
+                                "type": "practice",
+                                "name": "GeeksForGeeks",
+                                "url": "https://geeksforgeeks.org"
+                            },
+                            {
+                                "type": "book",
+                                "name": "Competitive Programming Handbook"
+                            }
+                        ],
+                        "practiceTarget": {
+                            "easy": 30,
+                            "medium": 60,
+                            "hard": 30
+                        }
+                    }
+                ]
+            },
+            {
+                "level": "Advanced",
+                "durationMonths": 2,
+                "phases": [
+                    {
+                        "phase": "Dynamic Programming",
+                        "durationWeeks": 4,
+                        "topics": [
+                            "DP Fundamentals",
+                            "Memoization vs Tabulation",
+                            "Knapsack Problems",
+                            "Longest Common Subsequence",
+                            "Matrix Chain Multiplication",
+                            "DP on Trees and Graphs"
+                        ],
+                        "resources": [
+                            {
+                                "type": "course",
+                                "name": "Aditya Verma DP Playlist",
+                                "url": "https://www.youtube.com"
+                            },
+                            {
+                                "type": "practice",
+                                "name": "LeetCode DP Tag",
+                                "url": "https://leetcode.com/tag/dynamic-programming"
+                            },
+                            {
+                                "type": "book",
+                                "name": "Dynamic Programming for Coding Interviews"
+                            }
+                        ],
+                        "practiceTarget": {
+                            "easy": 20,
+                            "medium": 70,
+                            "hard": 50
+                        }
+                    },
+                    {
+                        "phase": "Advanced Algorithms & Interview Prep",
+                        "durationWeeks": 4,
+                        "topics": [
+                            "Greedy Algorithms",
+                            "Backtracking",
+                            "Bit Manipulation",
+                            "Advanced Graph (Floyd-Warshall, Tarjan)",
+                            "Segment Trees",
+                            "Trie"
+                        ],
+                        "resources": [
+                            {
+                                "type": "practice",
+                                "name": "Codeforces Contests",
+                                "url": "https://codeforces.com"
+                            },
+                            {
+                                "type": "practice",
+                                "name": "CodeChef",
+                                "url": "https://codechef.com"
+                            },
+                            {
+                                "type": "course",
+                                "name": "Blind 75 LeetCode",
+                                "url": "https://neetcode.io"
+                            }
+                        ],
+                        "practiceTarget": {
+                            "easy": 10,
+                            "medium": 60,
+                            "hard": 80
+                        }
+                    }
+                ]
+            }
+        ],
+        "capstoneProjects": [
+            {
+                "name": "Build Your Own Data Structure Library",
+                "features": [
+                    "Implement all major data structures from scratch",
+                    "Write comprehensive unit tests",
+                    "Performance benchmarking"
+                ],
+                "stack": [
+                    "C++",
+                    "Python",
+                    "Testing Frameworks"
+                ]
+            }
+        ],
+        "careerOutcome": [
+            "Software Development Engineer",
+            "Competitive Programmer",
+            "Algorithm Engineer",
+            "Technical Interview Success"
+        ]
+    },
+    {
+        "id": "cloud_devops_roadmap",
+        "roadmapName": "Cloud & DevOps Engineer Roadmap",
+        "totalDurationMonths": 8,
+        "levels": [
+            {
+                "level": "Beginner",
+                "durationMonths": 3,
+                "phases": [
+                    {
+                        "phase": "Linux & Networking Fundamentals",
+                        "durationWeeks": 6,
+                        "goals": [
+                            "Master Linux command line",
+                            "Understand networking basics",
+                            "Learn shell scripting"
+                        ],
+                        "topics": [
+                            "Linux File System",
+                            "Basic Commands",
+                            "File Permissions",
+                            "Shell Scripting (Bash)",
+                            "TCP/IP, DNS, HTTP",
+                            "SSH and SCP"
+                        ],
+                        "resources": [
+                            {
+                                "type": "course",
+                                "name": "Linux Basics for Hackers",
+                                "url": "https://www.nostarch.com"
+                            },
+                            {
+                                "type": "practice",
+                                "name": "OverTheWire Bandit",
+                                "url": "https://overthewire.org"
+                            },
+                            {
+                                "type": "docs",
+                                "name": "Linux Journey",
+                                "url": "https://linuxjourney.com"
+                            }
+                        ],
+                        "projects": [
+                            "Automate File Backups with Bash",
+                            "System Monitoring Script",
+                            "Log Parser Tool"
+                        ]
+                    },
+                    {
+                        "phase": "Version Control & CI/CD Basics",
+                        "durationWeeks": 6,
+                        "topics": [
+                            "Git Advanced",
+                            "GitHub Actions",
+                            "GitLab CI",
+                            "Jenkins Basics",
+                            "Build Automation",
+                            "Testing Pipelines"
+                        ],
+                        "resources": [
+                            {
+                                "type": "docs",
+                                "name": "Git Documentation",
+                                "url": "https://git-scm.com/doc"
+                            },
+                            {
+                                "type": "course",
+                                "name": "GitHub Actions Tutorial",
+                                "url": "https://docs.github.com/actions"
+                            },
+                            {
+                                "type": "practice",
+                                "name": "Jenkins Tutorial",
+                                "url": "https://jenkins.io/doc"
+                            }
+                        ],
+                        "projects": [
+                            "Set Up CI Pipeline for a Node.js App",
+                            "Automated Testing with GitHub Actions"
+                        ]
+                    }
+                ]
+            },
+            {
+                "level": "Intermediate",
+                "durationMonths": 3,
+                "phases": [
+                    {
+                        "phase": "Containerization with Docker",
+                        "durationWeeks": 6,
+                        "topics": [
+                            "Docker Fundamentals",
+                            "Dockerfile Best Practices",
+                            "Docker Compose",
+                            "Multi-stage Builds",
+                            "Container Networking",
+                            "Volume Management"
+                        ],
+                        "resources": [
+                            {
+                                "type": "docs",
+                                "name": "Docker Docs",
+                                "url": "https://docs.docker.com"
+                            },
+                            {
+                                "type": "course",
+                                "name": "Docker Mastery",
+                                "url": "https://www.udemy.com"
+                            },
+                            {
+                                "type": "practice",
+                                "name": "Docker Hub",
+                                "url": "https://hub.docker.com"
+                            }
+                        ],
+                        "projects": [
+                            "Containerize Full Stack Application",
+                            "Multi-Container App with Docker Compose"
+                        ]
+                    },
+                    {
+                        "phase": "Cloud Platforms (AWS/GCP/Azure)",
+                        "durationWeeks": 6,
+                        "topics": [
+                            "IAM and Security",
+                            "EC2, S3, RDS",
+                            "VPC and Networking",
+                            "Load Balancers",
+                            "Auto Scaling",
+                            "CloudWatch/Monitoring"
+                        ],
+                        "resources": [
+                            {
+                                "type": "docs",
+                                "name": "AWS Documentation",
+                                "url": "https://docs.aws.amazon.com"
+                            },
+                            {
+                                "type": "course",
+                                "name": "AWS Certified Solutions Architect",
+                                "url": "https://aws.amazon.com/certification"
+                            },
+                            {
+                                "type": "practice",
+                                "name": "AWS Free Tier",
+                                "url": "https://aws.amazon.com/free"
+                            }
+                        ],
+                        "projects": [
+                            "Deploy Web App on AWS EC2",
+                            "Set Up Load Balancer and Auto Scaling"
+                        ]
+                    }
+                ]
+            },
+            {
+                "level": "Advanced",
+                "durationMonths": 2,
+                "phases": [
+                    {
+                        "phase": "Kubernetes & Orchestration",
+                        "durationWeeks": 4,
+                        "topics": [
+                            "Kubernetes Architecture",
+                            "Pods, Services, Deployments",
+                            "ConfigMaps and Secrets",
+                            "Ingress Controllers",
+                            "Helm Charts",
+                            "StatefulSets"
+                        ],
+                        "resources": [
+                            {
+                                "type": "docs",
+                                "name": "Kubernetes Docs",
+                                "url": "https://kubernetes.io/docs"
+                            },
+                            {
+                                "type": "course",
+                                "name": "Kubernetes for Developers",
+                                "url": "https://www.udemy.com"
+                            },
+                            {
+                                "type": "practice",
+                                "name": "Minikube",
+                                "url": "https://minikube.sigs.k8s.io"
+                            }
+                        ],
+                        "projects": [
+                            "Deploy Microservices on Kubernetes",
+                            "Set Up CI/CD with ArgoCD"
+                        ]
+                    },
+                    {
+                        "phase": "Infrastructure as Code & Monitoring",
+                        "durationWeeks": 4,
+                        "topics": [
+                            "Terraform Basics",
+                            "Ansible for Configuration Management",
+                            "Prometheus Monitoring",
+                            "Grafana Dashboards",
+                            "ELK Stack (Logging)",
+                            "Alerting and Incident Response"
+                        ],
+                        "resources": [
+                            {
+                                "type": "docs",
+                                "name": "Terraform Docs",
+                                "url": "https://terraform.io/docs"
+                            },
+                            {
+                                "type": "docs",
+                                "name": "Prometheus Docs",
+                                "url": "https://prometheus.io/docs"
+                            },
+                            {
+                                "type": "docs",
+                                "name": "Grafana Docs",
+                                "url": "https://grafana.com/docs"
+                            }
+                        ],
+                        "projects": [
+                            "Provision AWS Infrastructure with Terraform",
+                            "Full Monitoring Stack with Prometheus & Grafana"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "capstoneProjects": [
+            {
+                "name": "Production-Grade Microservices Platform",
+                "features": [
+                    "Kubernetes Deployment",
+                    "CI/CD Pipeline",
+                    "Monitoring & Logging",
+                    "Auto-scaling",
+                    "Infrastructure as Code"
+                ],
+                "stack": [
+                    "Kubernetes",
+                    "Docker",
+                    "Terraform",
+                    "Jenkins",
+                    "Prometheus",
+                    "Grafana"
+                ]
+            }
+        ],
+        "careerOutcome": [
+            "DevOps Engineer",
+            "Site Reliability Engineer",
+            "Cloud Engineer",
+            "Platform Engineer"
+        ]
+    }
+]

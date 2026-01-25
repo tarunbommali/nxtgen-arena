@@ -1,0 +1,1132 @@
+{
+    "id": "fullstack-backend-engineer-roadmap",
+    "title": "Full Stack / Backend Engineer Roadmap",
+    "description": "A complete journey from beginner to advanced covering backend, frontend, cloud, DevOps, and AI integration.",
+    "targetRoles": [
+        "Fresher",
+        "Job Seeker",
+        "Learner"
+    ],
+    "phases": [
+        {
+            "id": "phase-1",
+            "order": 1,
+            "title": "Foundations of Programming & CS",
+            "level": "Beginner to Advanced",
+            "duration": "6-8 weeks",
+            "description": "Build strong foundations in programming, DSA, and system design.",
+            "sections": [
+                {
+                    "id": "p1-s1",
+                    "title": "Choose Your Primary Language",
+                    "description": "Deep dive into one main language.",
+                    "items": [
+                        {
+                            "id": "p1-s1-i1",
+                            "title": "Backend Languages",
+                            "subItems": [
+                                {
+                                    "title": "Python",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=Python+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "Java",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=Java+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "Go",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=Go+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "Node.js",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=Node.js+tutorial",
+                                    "duration": "10m"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "p1-s1-i2",
+                            "title": "Full Stack Languages",
+                            "subItems": [
+                                {
+                                    "title": "JavaScript",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=JavaScript+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "TypeScript",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=TypeScript+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "React",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=React+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "Next.js",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=Next.js+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "Vue",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=Vue+tutorial",
+                                    "duration": "10m"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "p1-s2",
+                    "title": "Data Structures & Algorithms",
+                    "description": "Must-know topics for interviews.",
+                    "items": [
+                        {
+                            "id": "p1-s2-i1",
+                            "title": "Core DSA",
+                            "subItems": [
+                                {
+                                    "title": "Arrays",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=Arrays+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "Strings",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=Strings+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "Hashing",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=Hashing+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "Stack",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=Stack+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "Queue",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=Queue+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "Linked List",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=Linked+List+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "Recursion",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=Recursion+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "Backtracking",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=Backtracking+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "Trees (BST, AVL)",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=Trees+(BST,+AVL)+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "Graphs (DFS, BFS, Dijkstra)",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=Graphs+(DFS,+BFS,+Dijkstra)+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "Dynamic Programming",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=Dynamic+Programming+tutorial",
+                                    "duration": "10m"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "p1-s3",
+                    "title": "System Design Fundamentals",
+                    "description": "Learn how software is designed.",
+                    "items": [
+                        {
+                            "id": "p1-s3-i1",
+                            "title": "Core Concepts",
+                            "subItems": [
+                                {
+                                    "title": "Low Level Design (LLD)",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=Low+Level+Design+(LLD)+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "OOP",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=OOP+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "SOLID Principles",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=SOLID+Principles+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "Clean Code",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=Clean+Code+tutorial",
+                                    "duration": "10m"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "p1-s3-i2",
+                            "title": "Design Patterns",
+                            "subItems": [
+                                {
+                                    "title": "Factory",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=Factory+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "Singleton",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=Singleton+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "Observer",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=Observer+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "MVC",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=MVC+tutorial",
+                                    "duration": "10m"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "projects": [
+                {
+                    "id": "p1-pr1",
+                    "title": "Real-time Chat Application",
+                    "description": "Build a chat app using WebSockets and REST APIs.",
+                    "tags": [
+                        "websocket",
+                        "backend",
+                        "realtime"
+                    ]
+                },
+                {
+                    "id": "p1-pr2",
+                    "title": "DSA Implementations",
+                    "description": "Implement Linked List, Trie, and Graph traversal.",
+                    "tags": [
+                        "dsa",
+                        "core"
+                    ]
+                }
+            ],
+            "playlists": [
+                {
+                    "title": "Backend Engineering Masterclass",
+                    "author": "Hussein Nasser",
+                    "videoCount": 15,
+                    "url": "https://www.youtube.com/@hnasr",
+                    "thumbnail": "https://img.youtube.com/vi/g7U-8L_Z2vU/mqdefault.jpg"
+                },
+                {
+                    "title": "System Design for Beginners",
+                    "author": "NeetCode",
+                    "videoCount": 10,
+                    "url": "https://www.youtube.com/@NeetCode",
+                    "thumbnail": "https://img.youtube.com/vi/bUCk642Wd78/mqdefault.jpg"
+                },
+                {
+                    "title": "Data Structures Easy to Hard",
+                    "author": "freeCodeCamp",
+                    "videoCount": 24,
+                    "url": "https://www.youtube.com/@freecodecamp",
+                    "thumbnail": "https://img.youtube.com/vi/8hly31xKli0/mqdefault.jpg"
+                }
+            ]
+        },
+        {
+            "id": "phase-2",
+            "order": 2,
+            "title": "Backend Engineering",
+            "level": "Beginner to Advanced",
+            "duration": "6-8 weeks",
+            "description": "Learn backend frameworks, databases, and scalable systems.",
+            "sections": [
+                {
+                    "id": "p2-s1",
+                    "title": "Web Frameworks & API Development",
+                    "description": "",
+                    "items": [
+                        {
+                            "id": "p2-s1-i1",
+                            "title": "Frameworks",
+                            "subItems": [
+                                {
+                                    "title": "Django",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=Django+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "FastAPI",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=FastAPI+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "Express.js",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=Express.js+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "Nest.js",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=Nest.js+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "Gin",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=Gin+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "Fiber",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=Fiber+tutorial",
+                                    "duration": "10m"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "p2-s2",
+                    "title": "Database Mastery",
+                    "description": "",
+                    "items": [
+                        {
+                            "id": "p2-s2-i1",
+                            "title": "SQL",
+                            "subItems": [
+                                {
+                                    "title": "PostgreSQL",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=PostgreSQL+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "MySQL",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=MySQL+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "Indexes",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=Indexes+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "Joins",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=Joins+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "Transactions",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=Transactions+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "Partitioning",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=Partitioning+tutorial",
+                                    "duration": "10m"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "p2-s2-i2",
+                            "title": "NoSQL",
+                            "subItems": [
+                                {
+                                    "title": "MongoDB",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=MongoDB+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "Redis",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=Redis+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "Caching",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=Caching+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "Replication",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=Replication+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "Aggregation",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=Aggregation+tutorial",
+                                    "duration": "10m"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "p2-s2-i3",
+                            "title": "ORMs",
+                            "subItems": [
+                                {
+                                    "title": "Prisma",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=Prisma+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "TypeORM",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=TypeORM+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "SQLAlchemy",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=SQLAlchemy+tutorial",
+                                    "duration": "10m"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "p2-s3",
+                    "title": "Microservices & Scaling",
+                    "description": "",
+                    "items": [
+                        {
+                            "id": "p2-s3-i1",
+                            "title": "Architecture",
+                            "subItems": [
+                                {
+                                    "title": "REST vs GraphQL vs gRPC",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=REST+vs+GraphQL+vs+gRPC+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "JWT, OAuth, API Gateway",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=JWT,+OAuth,+API+Gateway+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "CQRS",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=CQRS+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "Kafka",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=Kafka+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "RabbitMQ",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=RabbitMQ+tutorial",
+                                    "duration": "10m"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "projects": [
+                {
+                    "id": "p2-pr1",
+                    "title": "URL Shortener",
+                    "description": "Build with rate limiting, caching, API gateway.",
+                    "tags": [
+                        "backend",
+                        "scaling"
+                    ]
+                },
+                {
+                    "id": "p2-pr2",
+                    "title": "Scalable E-Commerce Backend",
+                    "description": "REST API + SQL + Caching.",
+                    "tags": [
+                        "backend",
+                        "system-design"
+                    ]
+                }
+            ],
+            "playlists": [
+                {
+                    "title": "Backend Engineering Masterclass",
+                    "author": "Hussein Nasser",
+                    "videoCount": 15,
+                    "url": "https://www.youtube.com/@hnasr",
+                    "thumbnail": "https://img.youtube.com/vi/g7U-8L_Z2vU/mqdefault.jpg"
+                },
+                {
+                    "title": "System Design for Beginners",
+                    "author": "NeetCode",
+                    "videoCount": 10,
+                    "url": "https://www.youtube.com/@NeetCode",
+                    "thumbnail": "https://img.youtube.com/vi/bUCk642Wd78/mqdefault.jpg"
+                },
+                {
+                    "title": "Data Structures Easy to Hard",
+                    "author": "freeCodeCamp",
+                    "videoCount": 24,
+                    "url": "https://www.youtube.com/@freecodecamp",
+                    "thumbnail": "https://img.youtube.com/vi/8hly31xKli0/mqdefault.jpg"
+                }
+            ]
+        },
+        {
+            "id": "phase-3",
+            "order": 3,
+            "title": "Frontend Engineering",
+            "level": "Beginner to Advanced",
+            "duration": "4-6 weeks",
+            "description": "Master modern frontend development.",
+            "sections": [
+                {
+                    "id": "p3-s1",
+                    "title": "JavaScript & TypeScript",
+                    "description": "",
+                    "items": [
+                        {
+                            "id": "p3-s1-i1",
+                            "title": "Core",
+                            "subItems": [
+                                {
+                                    "title": "ES6+",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=ES6++tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "Promises",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=Promises+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "Async/Await",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=Async/Await+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "Functional Programming",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=Functional+Programming+tutorial",
+                                    "duration": "10m"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "p3-s2",
+                    "title": "Frontend Frameworks",
+                    "description": "",
+                    "items": [
+                        {
+                            "id": "p3-s2-i1",
+                            "title": "Frameworks & Tools",
+                            "subItems": [
+                                {
+                                    "title": "React",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=React+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "Next.js",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=Next.js+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "Vue",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=Vue+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "Redux",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=Redux+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "Zustand",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=Zustand+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "Tailwind",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=Tailwind+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "ShadCN",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=ShadCN+tutorial",
+                                    "duration": "10m"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "projects": [
+                {
+                    "id": "p3-pr1",
+                    "title": "Real-time Dashboard",
+                    "description": "Using React + WebSockets.",
+                    "tags": [
+                        "frontend",
+                        "realtime"
+                    ]
+                },
+                {
+                    "id": "p3-pr2",
+                    "title": "Portfolio Website",
+                    "description": "Using Next.js.",
+                    "tags": [
+                        "frontend"
+                    ]
+                }
+            ],
+            "playlists": [
+                {
+                    "title": "Backend Engineering Masterclass",
+                    "author": "Hussein Nasser",
+                    "videoCount": 15,
+                    "url": "https://www.youtube.com/@hnasr",
+                    "thumbnail": "https://img.youtube.com/vi/g7U-8L_Z2vU/mqdefault.jpg"
+                },
+                {
+                    "title": "System Design for Beginners",
+                    "author": "NeetCode",
+                    "videoCount": 10,
+                    "url": "https://www.youtube.com/@NeetCode",
+                    "thumbnail": "https://img.youtube.com/vi/bUCk642Wd78/mqdefault.jpg"
+                },
+                {
+                    "title": "Data Structures Easy to Hard",
+                    "author": "freeCodeCamp",
+                    "videoCount": 24,
+                    "url": "https://www.youtube.com/@freecodecamp",
+                    "thumbnail": "https://img.youtube.com/vi/8hly31xKli0/mqdefault.jpg"
+                }
+            ]
+        },
+        {
+            "id": "phase-4",
+            "order": 4,
+            "title": "Cloud & DevOps",
+            "level": "Beginner to Intermediate",
+            "duration": "4-6 weeks",
+            "description": "Deploy, scale, and monitor applications.",
+            "sections": [
+                {
+                    "id": "p4-s1",
+                    "title": "Cloud Basics",
+                    "description": "",
+                    "items": [
+                        {
+                            "id": "p4-s1-i1",
+                            "title": "AWS/GCP/Azure",
+                            "subItems": [
+                                {
+                                    "title": "IAM",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=IAM+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "EC2",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=EC2+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "S3",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=S3+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "RDS",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=RDS+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "Lambda",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=Lambda+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "CloudFront",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=CloudFront+tutorial",
+                                    "duration": "10m"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "p4-s2",
+                    "title": "Containers & Orchestration",
+                    "description": "",
+                    "items": [
+                        {
+                            "id": "p4-s2-i1",
+                            "title": "Docker & Kubernetes",
+                            "subItems": [
+                                {
+                                    "title": "Dockerfiles",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=Dockerfiles+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "K8s Pods",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=K8s+Pods+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "Deployments",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=Deployments+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "Ingress",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=Ingress+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "Services",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=Services+tutorial",
+                                    "duration": "10m"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "p4-s3",
+                    "title": "CI/CD & Monitoring",
+                    "description": "",
+                    "items": [
+                        {
+                            "id": "p4-s3-i1",
+                            "title": "DevOps Tools",
+                            "subItems": [
+                                {
+                                    "title": "GitHub Actions",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=GitHub+Actions+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "Jenkins",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=Jenkins+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "Terraform",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=Terraform+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "Prometheus",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=Prometheus+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "Grafana",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=Grafana+tutorial",
+                                    "duration": "10m"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "projects": [
+                {
+                    "id": "p4-pr1",
+                    "title": "Deploy App on AWS",
+                    "description": "Using Docker and Kubernetes.",
+                    "tags": [
+                        "devops",
+                        "cloud"
+                    ]
+                }
+            ],
+            "playlists": [
+                {
+                    "title": "Backend Engineering Masterclass",
+                    "author": "Hussein Nasser",
+                    "videoCount": 15,
+                    "url": "https://www.youtube.com/@hnasr",
+                    "thumbnail": "https://img.youtube.com/vi/g7U-8L_Z2vU/mqdefault.jpg"
+                },
+                {
+                    "title": "System Design for Beginners",
+                    "author": "NeetCode",
+                    "videoCount": 10,
+                    "url": "https://www.youtube.com/@NeetCode",
+                    "thumbnail": "https://img.youtube.com/vi/bUCk642Wd78/mqdefault.jpg"
+                },
+                {
+                    "title": "Data Structures Easy to Hard",
+                    "author": "freeCodeCamp",
+                    "videoCount": 24,
+                    "url": "https://www.youtube.com/@freecodecamp",
+                    "thumbnail": "https://img.youtube.com/vi/8hly31xKli0/mqdefault.jpg"
+                }
+            ]
+        },
+        {
+            "id": "phase-5",
+            "order": 5,
+            "title": "AI & ML Foundations",
+            "level": "Beginner to Intermediate",
+            "duration": "4-6 weeks",
+            "description": "Learn ML and GenAI integration.",
+            "sections": [
+                {
+                    "id": "p5-s1",
+                    "title": "ML Fundamentals",
+                    "description": "",
+                    "items": [
+                        {
+                            "id": "p5-s1-i1",
+                            "title": "Algorithms",
+                            "subItems": [
+                                {
+                                    "title": "Linear Regression",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=Linear+Regression+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "Decision Trees",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=Decision+Trees+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "Random Forest",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=Random+Forest+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "XGBoost",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=XGBoost+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "PyTorch",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=PyTorch+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "TensorFlow",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=TensorFlow+tutorial",
+                                    "duration": "10m"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "p5-s2",
+                    "title": "Generative AI",
+                    "description": "",
+                    "items": [
+                        {
+                            "id": "p5-s2-i1",
+                            "title": "LLMs",
+                            "subItems": [
+                                {
+                                    "title": "GPT",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=GPT+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "BERT",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=BERT+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "T5",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=T5+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "LangChain",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=LangChain+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "HuggingFace",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=HuggingFace+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "OpenAI API",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=OpenAI+API+tutorial",
+                                    "duration": "10m"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "projects": [
+                {
+                    "id": "p5-pr1",
+                    "title": "Sentiment Analysis Model",
+                    "description": "Using HuggingFace.",
+                    "tags": [
+                        "ml"
+                    ]
+                },
+                {
+                    "id": "p5-pr2",
+                    "title": "AI Chatbot",
+                    "description": "Using OpenAI API.",
+                    "tags": [
+                        "genai"
+                    ]
+                }
+            ],
+            "playlists": [
+                {
+                    "title": "Backend Engineering Masterclass",
+                    "author": "Hussein Nasser",
+                    "videoCount": 15,
+                    "url": "https://www.youtube.com/@hnasr",
+                    "thumbnail": "https://img.youtube.com/vi/g7U-8L_Z2vU/mqdefault.jpg"
+                },
+                {
+                    "title": "System Design for Beginners",
+                    "author": "NeetCode",
+                    "videoCount": 10,
+                    "url": "https://www.youtube.com/@NeetCode",
+                    "thumbnail": "https://img.youtube.com/vi/bUCk642Wd78/mqdefault.jpg"
+                },
+                {
+                    "title": "Data Structures Easy to Hard",
+                    "author": "freeCodeCamp",
+                    "videoCount": 24,
+                    "url": "https://www.youtube.com/@freecodecamp",
+                    "thumbnail": "https://img.youtube.com/vi/8hly31xKli0/mqdefault.jpg"
+                }
+            ]
+        },
+        {
+            "id": "phase-6",
+            "order": 6,
+            "title": "Performance & Security",
+            "level": "Intermediate to Advanced",
+            "duration": "3-4 weeks",
+            "description": "Optimize and secure applications.",
+            "sections": [
+                {
+                    "id": "p6-s1",
+                    "title": "Performance Optimization",
+                    "description": "",
+                    "items": [
+                        {
+                            "id": "p6-s1-i1",
+                            "title": "Optimization",
+                            "subItems": [
+                                {
+                                    "title": "Indexes",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=Indexes+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "Caching",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=Caching+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "Sharding",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=Sharding+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "CDN",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=CDN+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "Lazy Loading",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=Lazy+Loading+tutorial",
+                                    "duration": "10m"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "p6-s2",
+                    "title": "Security",
+                    "description": "",
+                    "items": [
+                        {
+                            "id": "p6-s2-i1",
+                            "title": "Best Practices",
+                            "subItems": [
+                                {
+                                    "title": "OWASP Top 10",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=OWASP+Top+10+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "JWT",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=JWT+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "OAuth",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=OAuth+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "Secrets Manager",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=Secrets+Manager+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "Vault",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=Vault+tutorial",
+                                    "duration": "10m"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "projects": [
+                {
+                    "id": "p6-pr1",
+                    "title": "Secure API System",
+                    "description": "JWT + OAuth + optimized DB.",
+                    "tags": [
+                        "security",
+                        "performance"
+                    ]
+                }
+            ],
+            "playlists": [
+                {
+                    "title": "Backend Engineering Masterclass",
+                    "author": "Hussein Nasser",
+                    "videoCount": 15,
+                    "url": "https://www.youtube.com/@hnasr",
+                    "thumbnail": "https://img.youtube.com/vi/g7U-8L_Z2vU/mqdefault.jpg"
+                },
+                {
+                    "title": "System Design for Beginners",
+                    "author": "NeetCode",
+                    "videoCount": 10,
+                    "url": "https://www.youtube.com/@NeetCode",
+                    "thumbnail": "https://img.youtube.com/vi/bUCk642Wd78/mqdefault.jpg"
+                },
+                {
+                    "title": "Data Structures Easy to Hard",
+                    "author": "freeCodeCamp",
+                    "videoCount": 24,
+                    "url": "https://www.youtube.com/@freecodecamp",
+                    "thumbnail": "https://img.youtube.com/vi/8hly31xKli0/mqdefault.jpg"
+                }
+            ]
+        },
+        {
+            "id": "phase-7",
+            "order": 7,
+            "title": "Capstone SaaS Project",
+            "level": "Advanced",
+            "duration": "6-8 weeks",
+            "description": "Build a production-grade SaaS application.",
+            "sections": [
+                {
+                    "id": "p7-s1",
+                    "title": "Tech Stack",
+                    "description": "",
+                    "items": [
+                        {
+                            "id": "p7-s1-i1",
+                            "title": "Stack",
+                            "subItems": [
+                                {
+                                    "title": "FastAPI / Express",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=FastAPI+/+Express+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "React / Next.js",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=React+/+Next.js+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "PostgreSQL + Redis",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=PostgreSQL+++Redis+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "Docker + Kubernetes",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=Docker+++Kubernetes+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "AWS",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=AWS+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "GitHub Actions",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=GitHub+Actions+tutorial",
+                                    "duration": "10m"
+                                },
+                                {
+                                    "title": "OpenAI API",
+                                    "videoUrl": "https://www.youtube.com/results?search_query=OpenAI+API+tutorial",
+                                    "duration": "10m"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "projects": [
+                {
+                    "id": "p7-pr1",
+                    "title": "AI-powered SaaS Platform",
+                    "description": "Full stack app with CI/CD and cloud deployment.",
+                    "tags": [
+                        "saas",
+                        "fullstack",
+                        "ai"
+                    ]
+                }
+            ],
+            "playlists": [
+                {
+                    "title": "Backend Engineering Masterclass",
+                    "author": "Hussein Nasser",
+                    "videoCount": 15,
+                    "url": "https://www.youtube.com/@hnasr",
+                    "thumbnail": "https://img.youtube.com/vi/g7U-8L_Z2vU/mqdefault.jpg"
+                },
+                {
+                    "title": "System Design for Beginners",
+                    "author": "NeetCode",
+                    "videoCount": 10,
+                    "url": "https://www.youtube.com/@NeetCode",
+                    "thumbnail": "https://img.youtube.com/vi/bUCk642Wd78/mqdefault.jpg"
+                },
+                {
+                    "title": "Data Structures Easy to Hard",
+                    "author": "freeCodeCamp",
+                    "videoCount": 24,
+                    "url": "https://www.youtube.com/@freecodecamp",
+                    "thumbnail": "https://img.youtube.com/vi/8hly31xKli0/mqdefault.jpg"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,274 @@
+[
+    {
+        "id": "google_cloud_ai_labs",
+        "name": "Google Cloud AI Labs Series",
+        "type": "challenge",
+        "status": "active",
+        "tags": [
+            "Free",
+            "In Person"
+        ],
+        "description": "Learn Google Cloud AI tools and compete in hands-on labs. Get certified and win prizes!",
+        "registrationDeadline": "2026-02-15T23:59:59",
+        "eventStartDate": "2026-03-01T10:00:00",
+        "eventEndDate": "2026-03-15T18:00:00",
+        "location": "Multiple Cities, India",
+        "hasRoadmap": true,
+        "roadmapId": "cloud_devops_roadmap",
+        "registrationStatus": "open",
+        "totalParticipants": 2547,
+        "prizes": [
+            "Certificates",
+            "Goodies",
+            "Internship Opportunities"
+        ],
+        "organizer": "Google Cloud",
+        "difficulty": "intermediate",
+        "rounds": [
+            {
+                "name": "Registration",
+                "status": "ongoing",
+                "deadline": "2026-02-15"
+            },
+            {
+                "name": "Qualification Round",
+                "status": "upcoming",
+                "startDate": "2026-03-01"
+            },
+            {
+                "name": "Final Round",
+                "status": "upcoming",
+                "startDate": "2026-03-10"
+            }
+        ]
+    },
+    {
+        "id": "hackathon_2026_spring",
+        "name": "NxtGen Spring Hackathon 2026",
+        "type": "hackathon",
+        "status": "upcoming",
+        "tags": [
+            "Hybrid",
+            "Prize Pool: ₹5L"
+        ],
+        "description": "48-hour hackathon focused on building innovative solutions using AI/ML, Web3, and Cloud technologies.",
+        "registrationDeadline": "2026-02-28T23:59:59",
+        "eventStartDate": "2026-03-20T09:00:00",
+        "eventEndDate": "2026-03-22T18:00:00",
+        "location": "Bangalore & Online",
+        "hasRoadmap": true,
+        "roadmapId": "fullstack_roadmap",
+        "registrationStatus": "open",
+        "totalParticipants": 1834,
+        "prizes": [
+            "₹2,00,000 First Prize",
+            "₹1,50,000 Second Prize",
+            "₹1,00,000 Third Prize",
+            "Multiple Track Winners"
+        ],
+        "organizer": "NxtGen Arena",
+        "difficulty": "all-levels",
+        "tracks": [
+            "AI/ML Innovation",
+            "Full Stack Web Development",
+            "Blockchain & Web3",
+            "Cloud Computing"
+        ],
+        "rounds": [
+            {
+                "name": "Registration",
+                "status": "ongoing",
+                "deadline": "2026-02-28"
+            },
+            {
+                "name": "Idea Submission",
+                "status": "upcoming",
+                "deadline": "2026-03-15"
+            },
+            {
+                "name": "Hackathon (48hr)",
+                "status": "upcoming",
+                "startDate": "2026-03-20"
+            }
+        ]
+    },
+    {
+        "id": "code_arena_monthly_contest",
+        "name": "Code Arena Monthly Contest - January",
+        "type": "coding_contest",
+        "status": "completed",
+        "tags": [
+            "Online",
+            "DSA"
+        ],
+        "description": "Monthly competitive programming contest with algorithmic challenges ranging from easy to hard.",
+        "registrationDeadline": "2026-01-20T20:00:00",
+        "eventStartDate": "2026-01-21T20:00:00",
+        "eventEndDate": "2026-01-21T22:00:00",
+        "location": "Online",
+        "hasRoadmap": true,
+        "roadmapId": "dsa_focused_roadmap",
+        "registrationStatus": "closed",
+        "totalParticipants": 4521,
+        "prizes": [
+            "Top 100 get certificates",
+            "Top 10 get swag"
+        ],
+        "organizer": "NxtGen Arena",
+        "difficulty": "all-levels",
+        "problemCount": 6,
+        "rounds": [
+            {
+                "name": "Contest",
+                "status": "completed",
+                "startDate": "2026-01-21"
+            }
+        ]
+    },
+    {
+        "id": "web3_workshop_series",
+        "name": "Web3 Developer Workshop Series",
+        "type": "workshop",
+        "status": "active",
+        "tags": [
+            "Free",
+            "Online",
+            "Certificate"
+        ],
+        "description": "4-week workshop series covering Blockchain basics, Smart Contracts, DApps, and Web3 development.",
+        "registrationDeadline": "2026-02-05T23:59:59",
+        "eventStartDate": "2026-02-08T18:00:00",
+        "eventEndDate": "2026-03-08T20:00:00",
+        "location": "Online",
+        "hasRoadmap": false,
+        "registrationStatus": "open",
+        "totalParticipants": 892,
+        "prizes": [
+            "Certificate of Completion",
+            "NFT Badge for Top Performers"
+        ],
+        "organizer": "Web3 India Foundation",
+        "difficulty": "beginner",
+        "schedule": [
+            {
+                "week": 1,
+                "topic": "Blockchain Fundamentals",
+                "date": "2026-02-08"
+            },
+            {
+                "week": 2,
+                "topic": "Smart Contracts with Solidity",
+                "date": "2026-02-15"
+            },
+            {
+                "week": 3,
+                "topic": "Building DApps",
+                "date": "2026-02-22"
+            },
+            {
+                "week": 4,
+                "topic": "Web3.js and Project Showcase",
+                "date": "2026-03-01"
+            }
+        ],
+        "rounds": [
+            {
+                "name": "Registration",
+                "status": "ongoing",
+                "deadline": "2026-02-05"
+            }
+        ]
+    },
+    {
+        "id": "ai_ml_challenge_2026",
+        "name": "AI/ML Challenge 2026",
+        "type": "challenge",
+        "status": "upcoming",
+        "tags": [
+            "Online",
+            "Machine Learning",
+            "Prize Pool: ₹3L"
+        ],
+        "description": "Build ML models to solve real-world problems. Datasets and problem statements will be revealed on event day.",
+        "registrationDeadline": "2026-03-10T23:59:59",
+        "eventStartDate": "2026-03-15T00:00:00",
+        "eventEndDate": "2026-04-15T23:59:59",
+        "location": "Online",
+        "hasRoadmap": false,
+        "registrationStatus": "open",
+        "totalParticipants": 1245,
+        "prizes": [
+            "₹1,50,000 Winner",
+            "₹1,00,000 Runner Up",
+            "₹50,000 Third Place"
+        ],
+        "organizer": "NxtGen Arena",
+        "difficulty": "intermediate",
+        "tracks": [
+            "Computer Vision",
+            "Natural Language Processing",
+            "Time Series Forecasting"
+        ],
+        "rounds": [
+            {
+                "name": "Registration",
+                "status": "upcoming",
+                "deadline": "2026-03-10"
+            },
+            {
+                "name": "Problem Release",
+                "status": "upcoming",
+                "startDate": "2026-03-15"
+            },
+            {
+                "name": "Submission Deadline",
+                "status": "upcoming",
+                "deadline": "2026-04-15"
+            }
+        ]
+    },
+    {
+        "id": "cyber_security_ctf",
+        "name": "CyberArena CTF 2026",
+        "type": "ctf",
+        "status": "upcoming",
+        "tags": [
+            "Online",
+            "Security",
+            "Jeopardy Style"
+        ],
+        "description": "Capture The Flag competition with challenges in web security, cryptography, reverse engineering, and more.",
+        "registrationDeadline": "2026-04-01T23:59:59",
+        "eventStartDate": "2026-04-05T20:00:00",
+        "eventEndDate": "2026-04-07T20:00:00",
+        "location": "Online",
+        "hasRoadmap": false,
+        "registrationStatus": "not_open",
+        "totalParticipants": 0,
+        "prizes": [
+            "Prizes TBA",
+            "Certificates for Top 50"
+        ],
+        "organizer": "CyberArena Team",
+        "difficulty": "intermediate",
+        "categories": [
+            "Web Exploitation",
+            "Cryptography",
+            "Reverse Engineering",
+            "Forensics",
+            "Binary Exploitation"
+        ],
+        "rounds": [
+            {
+                "name": "Registration Opens",
+                "status": "upcoming",
+                "startDate": "2026-03-15"
+            },
+            {
+                "name": "CTF Event",
+                "status": "upcoming",
+                "startDate": "2026-04-05"
+            }
+        ]
+    }
+]
