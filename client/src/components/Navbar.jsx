@@ -1,11 +1,11 @@
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import { LogOut, User, Menu, X, Calendar, Map, Code, FileText, Zap } from 'lucide-react';
+import { LogOut, User, Menu, X, Calendar, Map, Code, FileText, Target } from 'lucide-react';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Navbar({ toggleSidebar, sidebarOpen }) {
-    const { currentUser, logout, login, userData } = useAuth();
+    const { currentUser, logout, login } = useAuth();
     const [profileOpen, setProfileOpen] = useState(false);
     const navigate = useNavigate();
     const location = useLocation();
@@ -20,6 +20,7 @@ export default function Navbar({ toggleSidebar, sidebarOpen }) {
     };
 
     const navLinks = [
+                { path: '/challenges', label: '30-Day Challenges', icon: Target },
         { path: '/dsa-sheet', label: 'DSA', icon: Code },
         { path: '/events', label: 'Events', icon: Calendar },
         { path: '/roadmaps', label: 'Roadmaps', icon: Map },
@@ -45,14 +46,32 @@ export default function Navbar({ toggleSidebar, sidebarOpen }) {
 
                     {/* Logo */}
                     <div
-                        className="flex items-center gap-2 cursor-pointer"
+                        className="flex items-center gap-3 cursor-pointer group"
                         onClick={() => navigate('/')}
                     >
-                        <div className="w-8 h-8 bg-gradient-to-br from-primary to-purple-600 rounded-lg flex items-center justify-center">
-                            <span className="font-bold text-white">N</span>
+                        {/* Logo Icon */}
+                        <div className="relative">
+                            <div className="w-9 h-9 md:w-10 md:h-10 bg-gradient-to-br from-primary via-purple-500 to-blue-500 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+                                <div className="w-7 h-7 md:w-8 md:h-8 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center border border-white/30">
+                                    <span className="text-white font-black text-xs md:text-sm">N</span>
+                                </div>
+                            </div>
+                            <div className="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 md:w-3 md:h-3 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full animate-pulse"></div>
                         </div>
-                        <div className="text-lg md:text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-400 hidden xs:block">
-                            NxtGen<span className="text-white">Labs</span>
+                        
+                        {/* Logo Text */}
+                        <div className="flex flex-col">
+                            <div className="flex items-center gap-0.5 md:gap-1">
+                                <span className="text-lg md:text-xl font-black bg-gradient-to-r from-white via-gray-100 to-white bg-clip-text text-transparent tracking-tight">
+                                    Nxtgen
+                                </span>
+                                <span className="text-lg md:text-xl font-black bg-gradient-to-r from-primary via-purple-400 to-blue-400 bg-clip-text text-transparent tracking-tight">
+                                    Arena
+                                </span>
+                            </div>
+                            <div className="text-xs text-muted-foreground font-medium tracking-wider uppercase hidden sm:block">
+                                Engineering Platform
+                            </div>
                         </div>
                     </div>
 

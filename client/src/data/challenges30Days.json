@@ -1,0 +1,488 @@
+{
+  "challenges": [
+    {
+      "id": "git-mastery",
+      "title": "Git Mastery Challenge",
+      "description": "Master version control with Git in 30 days",
+      "category": "DevOps",
+      "difficulty": "Beginner",
+      "duration": "30 days",
+      "icon": "git-branch",
+      "color": "from-orange-500 to-red-500",
+      "totalDays": 30,
+      "overview": "Learn Git from basics to advanced concepts including branching, merging, rebasing, and collaborative workflows.",
+      "prerequisites": ["Basic command line knowledge"],
+      "learningOutcomes": [
+        "Master Git fundamentals and advanced features",
+        "Understand branching strategies and workflows",
+        "Learn collaborative development practices",
+        "Handle merge conflicts and complex scenarios"
+       ],
+      "days": [
+        {
+          "day": 1,
+          "title": "Git Basics & Installation",
+          "description": "Set up Git and learn basic commands",
+          "tasks": [
+            "Install Git on your system",
+            "Configure Git with your name and email",
+            "Create your first repository",
+            "Learn git init, add, commit, status"
+          ],
+          "resources": [
+            {
+              "title": "Official Git Documentation",
+              "url": "https://git-scm.com/doc",
+              "type": "documentation"
+            },
+            {
+              "title": "Git Basics Video Tutorial",
+              "url": "https://www.youtube.com/watch?v=HVsySz-h9r4",
+              "type": "video"
+            }
+          ],
+          "submission": {
+            "type": "screenshot",
+            "description": "Submit a screenshot of your first Git commit"
+          }
+        },
+        {
+          "day": 2,
+          "title": "Working Directory & Staging",
+          "description": "Understand Git's three-tree architecture",
+          "tasks": [
+            "Learn about working directory, staging area, and repository",
+            "Practice git add with different options",
+            "Use git diff to see changes",
+            "Understand git reset and git checkout"
+          ],
+          "resources": [
+            {
+              "title": "Git Three-Tree Architecture",
+              "url": "https://git-scm.com/book/en/v2/Git-Tools-Reset-Demystified",
+              "type": "article"
+            }
+          ],
+          "submission": {
+            "type": "text",
+            "description": "Explain the difference between working directory, staging area, and repository"
+          }
+        },
+        {
+          "day": 3,
+          "title": "Branching Fundamentals",
+          "description": "Master Git branching and switching",
+          "tasks": [
+            "Create and switch between branches",
+            "Understand branch pointers and HEAD",
+            "Practice git branch, git checkout, git switch",
+            "Create a feature branch workflow"
+          ],
+          "resources": [
+            {
+              "title": "Git Branching Tutorial",
+              "url": "https://learngitbranching.js.org/",
+              "type": "interactive"
+            },
+            {
+              "title": "Git Branch Documentation",
+              "url": "https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell",
+              "type": "documentation"
+            }
+          ],
+          "submission": {
+            "type": "screenshot",
+            "description": "Submit screenshot showing multiple branches in your repository"
+          }
+        }
+      ]
+    },
+    {
+      "id": "dsa-fundamentals",
+      "title": "DSA Fundamentals Challenge",
+      "description": "Build strong foundation in Data Structures and Algorithms",
+      "category": "Computer Science",
+      "difficulty": "Intermediate",
+      "duration": "30 days",
+      "icon": "code",
+      "color": "from-blue-500 to-purple-500",
+      "totalDays": 30,
+      "overview": "Master essential data structures and algorithms through daily practice and implementation.",
+      "prerequisites": ["Basic programming knowledge in any language"],
+      "learningOutcomes": [
+        "Implement fundamental data structures",
+        "Understand time and space complexity",
+        "Solve algorithmic problems efficiently",
+        "Prepare for technical interviews"
+      ],
+      "days": [
+        {
+          "day": 1,
+          "title": "Arrays & Time Complexity",
+          "description": "Master arrays and Big O notation",
+          "tasks": [
+            "Implement dynamic array from scratch",
+            "Solve 3 array problems on LeetCode",
+            "Calculate time complexity for each solution",
+            "Write analysis of space complexity"
+          ],
+          "resources": [
+            {
+              "title": "Big O Notation Guide",
+              "url": "https://www.bigocheatsheet.com/",
+              "type": "reference"
+            },
+            {
+              "title": "Array Problems Practice",
+              "url": "https://leetcode.com/tag/array/",
+              "type": "practice"
+            }
+          ],
+          "submission": {
+            "type": "code",
+            "description": "Submit your array implementation and 3 solved problems with complexity analysis"
+          }
+        },
+        {
+          "day": 2,
+          "title": "Linked Lists Implementation",
+          "description": "Build and manipulate linked list data structures",
+          "tasks": [
+            "Implement singly linked list from scratch",
+            "Add methods: insert, delete, search, reverse",
+            "Solve 3 linked list problems",
+            "Compare array vs linked list performance"
+          ],
+          "resources": [
+            {
+              "title": "Linked List Visualization",
+              "url": "https://visualgo.net/en/list",
+              "type": "interactive"
+            },
+            {
+              "title": "LeetCode Linked List Problems",
+              "url": "https://leetcode.com/tag/linked-list/",
+              "type": "practice"
+            }
+          ],
+          "submission": {
+            "type": "code",
+            "description": "Submit your linked list implementation with all methods and solved problems"
+          }
+        }
+      ]
+    },
+    {
+      "id": "networking-deep-dive",
+      "title": "Computer Networking Deep Dive",
+      "description": "Understand networking from OSI model to modern protocols",
+      "category": "Computer Science",
+      "difficulty": "Intermediate",
+      "duration": "30 days",
+      "icon": "network",
+      "color": "from-green-500 to-teal-500",
+      "totalDays": 30,
+      "overview": "Comprehensive journey through computer networking concepts, protocols, and practical implementations.",
+      "prerequisites": ["Basic computer science knowledge"],
+      "learningOutcomes": [
+        "Master OSI and TCP/IP models",
+        "Understand routing and switching",
+        "Learn network security fundamentals",
+        "Implement network protocols"
+      ],
+      "days": [
+        {
+          "day": 1,
+          "title": "OSI Model & Network Basics",
+          "description": "Foundation of computer networking",
+          "tasks": [
+            "Study all 7 layers of OSI model",
+            "Compare OSI with TCP/IP model",
+            "Set up a simple network topology",
+            "Use Wireshark to capture packets"
+          ],
+          "resources": [
+            {
+              "title": "OSI Model Explained",
+              "url": "https://www.cloudflare.com/learning/ddos/glossary/open-systems-interconnection-model-osi/",
+              "type": "article"
+            }
+          ],
+          "submission": {
+            "type": "diagram",
+            "description": "Create a network diagram showing OSI layers with real-world examples"
+          }
+        }
+      ]
+    },
+    {
+      "id": "docker-containerization",
+      "title": "Docker Containerization Mastery",
+      "description": "Master containerization with Docker and orchestration",
+      "category": "DevOps",
+      "difficulty": "Intermediate",
+      "duration": "30 days",
+      "icon": "container",
+      "color": "from-blue-400 to-cyan-500",
+      "totalDays": 30,
+      "overview": "Learn Docker from basics to advanced orchestration with Kubernetes.",
+      "prerequisites": ["Basic Linux knowledge", "Understanding of applications"],
+      "learningOutcomes": [
+        "Master Docker fundamentals",
+        "Create efficient Dockerfiles",
+        "Understand container orchestration",
+        "Deploy applications with Docker Compose"
+      ],
+      "days": [
+        {
+          "day": 1,
+          "title": "Docker Installation & First Container",
+          "description": "Get started with Docker basics",
+          "tasks": [
+            "Install Docker on your system",
+            "Run your first container",
+            "Understand Docker architecture",
+            "Learn basic Docker commands"
+          ],
+          "resources": [
+            {
+              "title": "Docker Official Tutorial",
+              "url": "https://docs.docker.com/get-started/",
+              "type": "tutorial"
+            }
+          ],
+          "submission": {
+            "type": "screenshot",
+            "description": "Submit screenshot of running Docker containers"
+          }
+        }
+      ]
+    },
+    {
+      "id": "cloud-aws-fundamentals",
+      "title": "AWS Cloud Fundamentals",
+      "description": "Master AWS cloud services and architecture",
+      "category": "Cloud Computing",
+      "difficulty": "Intermediate",
+      "duration": "30 days",
+      "icon": "cloud",
+      "color": "from-yellow-500 to-orange-500",
+      "totalDays": 30,
+      "overview": "Comprehensive AWS learning path covering core services and cloud architecture patterns.",
+      "prerequisites": ["Basic networking knowledge", "Understanding of web applications"],
+      "learningOutcomes": [
+        "Master core AWS services",
+        "Design scalable cloud architectures",
+        "Implement security best practices",
+        "Optimize costs and performance"
+      ],
+      "days": [
+        {
+          "day": 1,
+          "title": "AWS Account Setup & IAM",
+          "description": "Set up AWS account and learn Identity Access Management",
+          "tasks": [
+            "Create AWS free tier account",
+            "Set up IAM users and roles",
+            "Configure MFA",
+            "Create billing alerts"
+          ],
+          "resources": [
+            {
+              "title": "AWS IAM Best Practices",
+              "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html",
+              "type": "documentation"
+            }
+          ],
+          "submission": {
+            "type": "screenshot",
+            "description": "Submit screenshot of IAM dashboard with created users and roles"
+          }
+        }
+      ]
+    },
+    {
+      "id": "web-development-html-css-js",
+      "title": "Web Development Fundamentals",
+      "description": "Master HTML, CSS, and JavaScript from scratch",
+      "category": "Web Development",
+      "difficulty": "Beginner",
+      "duration": "30 days",
+      "icon": "code2",
+      "color": "from-pink-500 to-purple-500",
+      "totalDays": 30,
+      "overview": "Complete web development foundation covering HTML5, CSS3, and modern JavaScript.",
+      "prerequisites": ["Basic computer literacy"],
+      "learningOutcomes": [
+        "Build semantic HTML structures",
+        "Create responsive CSS layouts",
+        "Master JavaScript fundamentals",
+        "Build interactive web applications"
+      ],
+      "days": [
+        {
+          "day": 1,
+          "title": "HTML5 Fundamentals",
+          "description": "Learn semantic HTML and document structure",
+          "tasks": [
+            "Create a personal portfolio HTML structure",
+            "Use semantic HTML5 elements",
+            "Implement proper heading hierarchy",
+            "Add forms with validation attributes"
+          ],
+          "resources": [
+            {
+              "title": "MDN HTML Guide",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/HTML",
+              "type": "documentation"
+            }
+          ],
+          "submission": {
+            "type": "code",
+            "description": "Submit your HTML portfolio structure with semantic elements"
+          }
+        },
+        {
+          "day": 2,
+          "title": "CSS Fundamentals & Box Model",
+          "description": "Master CSS basics and layout principles",
+          "tasks": [
+            "Style your HTML portfolio with CSS",
+            "Understand box model (margin, border, padding, content)",
+            "Practice CSS selectors and specificity",
+            "Create a responsive navigation bar"
+          ],
+          "resources": [
+            {
+              "title": "CSS Box Model Interactive",
+              "url": "https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model",
+              "type": "tutorial"
+            },
+            {
+              "title": "CSS Selectors Game",
+              "url": "https://flukeout.github.io/",
+              "type": "interactive"
+            }
+          ],
+          "submission": {
+            "type": "screenshot",
+            "description": "Submit screenshot of your styled portfolio with CSS applied"
+          }
+        },
+        {
+          "day": 3,
+          "title": "Flexbox Layout System",
+          "description": "Master modern CSS layout with Flexbox",
+          "tasks": [
+            "Convert your portfolio to use Flexbox",
+            "Practice flex-direction, justify-content, align-items",
+            "Create a responsive card layout",
+            "Build a flexible navigation system"
+          ],
+          "resources": [
+            {
+              "title": "Flexbox Froggy Game",
+              "url": "https://flexboxfroggy.com/",
+              "type": "interactive"
+            },
+            {
+              "title": "Complete Guide to Flexbox",
+              "url": "https://css-tricks.com/snippets/css/a-guide-to-flexbox/",
+              "type": "guide"
+            }
+          ],
+          "submission": {
+            "type": "code",
+            "description": "Submit your Flexbox-based portfolio layout code"
+          }
+        }
+      ]
+    },
+    {
+      "id": "devops-pipeline",
+      "title": "DevOps Pipeline Mastery",
+      "description": "Build complete CI/CD pipelines and automation",
+      "category": "DevOps",
+      "difficulty": "Advanced",
+      "duration": "30 days",
+      "icon": "git-branch",
+      "color": "from-purple-500 to-indigo-500",
+      "totalDays": 30,
+      "overview": "Master DevOps practices including CI/CD, infrastructure as code, monitoring, and automation.",
+      "prerequisites": ["Basic Linux knowledge", "Git fundamentals", "Docker basics"],
+      "learningOutcomes": [
+        "Build automated CI/CD pipelines",
+        "Implement infrastructure as code",
+        "Set up monitoring and logging",
+        "Master deployment strategies"
+      ],
+      "days": [
+        {
+          "day": 1,
+          "title": "CI/CD Fundamentals",
+          "description": "Understanding continuous integration and deployment",
+          "tasks": [
+            "Set up GitHub Actions workflow",
+            "Create automated testing pipeline",
+            "Configure build and deployment stages",
+            "Implement basic security scanning"
+          ],
+          "resources": [
+            {
+              "title": "GitHub Actions Documentation",
+              "url": "https://docs.github.com/en/actions",
+              "type": "documentation"
+            }
+          ],
+          "submission": {
+            "type": "screenshot",
+            "description": "Submit screenshot of your working CI/CD pipeline"
+          }
+        }
+      ]
+    },
+    {
+      "id": "python-programming",
+      "title": "Python Programming Mastery",
+      "description": "Master Python from basics to advanced concepts",
+      "category": "Programming",
+      "difficulty": "Beginner",
+      "duration": "30 days",
+      "icon": "code",
+      "color": "from-green-400 to-blue-500",
+      "totalDays": 30,
+      "overview": "Comprehensive Python learning covering syntax, OOP, libraries, and real-world projects.",
+      "prerequisites": ["Basic programming concepts"],
+      "learningOutcomes": [
+        "Master Python syntax and fundamentals",
+        "Understand object-oriented programming",
+        "Work with popular Python libraries",
+        "Build real-world Python applications"
+      ],
+      "days": [
+        {
+          "day": 1,
+          "title": "Python Basics & Environment Setup",
+          "description": "Get started with Python programming",
+          "tasks": [
+            "Install Python and set up development environment",
+            "Learn Python syntax and basic data types",
+            "Practice variables, operators, and control structures",
+            "Write your first Python programs"
+          ],
+          "resources": [
+            {
+              "title": "Python Official Tutorial",
+              "url": "https://docs.python.org/3/tutorial/",
+              "type": "tutorial"
+            }
+          ],
+          "submission": {
+            "type": "code",
+            "description": "Submit 5 basic Python programs demonstrating variables, loops, and functions"
+          }
+        }
+      ]
+    }
+  ]
+}
