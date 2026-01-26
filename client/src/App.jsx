@@ -13,7 +13,6 @@ import DSASheet from './components/dsa/DSASheet';
 import DSATopicDetail from './components/dsa/DSATopicDetail';
 import ChallengesList from './components/challenges/ChallengesList';
 import ChallengeDetail from './components/challenges/ChallengeDetail';
-import ChallengeDayDetail from './components/challenges/ChallengeDayDetail';
 
 function ProtectedRoute({ children, requireAdmin = false }) {
   const { currentUser, userData, loading } = useAuth();
@@ -97,10 +96,7 @@ function AppContent() {
         path="/challenges/:challengeId"
         element={<ChallengeDetail />}
       />
-      <Route
-        path="/challenges/:challengeId/day/:dayNumber"
-        element={<ChallengeDayDetail />}
-      />
+
     </Routes>
   );
 }
