@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { useAuth, AuthProvider } from './context/AuthContext';
 import LandingPage from './components/LandingPage';
 import Profile from './components/Profile';
+import EditProfile from './components/EditProfile';
 import AdminDashboard from './components/admin/AdminDashboard';
 import ContestDashboard from './components/ContestDashboard';
 import Events from './components/events/Events';
@@ -10,6 +11,8 @@ import RoadmapList from './components/roadmap/RoadmapList';
 import RoadmapDetail from './components/roadmap/RoadmapDetail';
 import DSASheet from './components/dsa/DSASheet';
 import DSATopicDetail from './components/dsa/DSATopicDetail';
+import ChallengesList from './components/challenges/ChallengesList';
+import ChallengeDetail from './components/challenges/ChallengeDetail';
 
 function ProtectedRoute({ children, requireAdmin = false }) {
   const { currentUser, userData, loading } = useAuth();
@@ -46,6 +49,14 @@ function AppContent() {
         }
       />
       <Route
+        path="/profile/edit"
+        element={
+          <ProtectedRoute>
+            <EditProfile />
+          </ProtectedRoute>
+        }
+      />
+      <Route
         path="/my-applications"
         element={
           <ProtectedRoute>
@@ -77,6 +88,15 @@ function AppContent() {
         path="/dsa-sheet/:topicId"
         element={<DSATopicDetail />}
       />
+      <Route
+        path="/challenges"
+        element={<ChallengesList />}
+      />
+      <Route
+        path="/challenges/:challengeId"
+        element={<ChallengeDetail />}
+      />
+
     </Routes>
   );
 }
