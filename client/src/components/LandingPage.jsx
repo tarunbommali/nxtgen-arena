@@ -282,6 +282,120 @@ export default function LandingPage() {
                     </motion.div>
                 </section>
 
+                {/* 30-DAY CHALLENGES */}
+                <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="space-y-8"
+                    >
+                        <div className="text-center space-y-4">
+                            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-orange-500/10 to-red-500/10 border border-orange-500/20 rounded-full text-sm text-orange-400 mb-4">
+                                <Target className="w-4 h-4" />
+                                <span>🔥 Transform Your Skills in 30 Days</span>
+                            </div>
+                            <h2 className="text-3xl md:text-4xl font-bold mb-2">30-Day Skill Challenges</h2>
+                            <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
+                                Intensive learning challenges that transform beginners into skilled developers. 
+                                Master new technologies through daily tasks, projects, and hands-on practice.
+                            </p>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            {[
+                                {
+                                    title: 'Git Mastery',
+                                    description: 'Master version control from basics to advanced workflows',
+                                    category: 'DevOps',
+                                    difficulty: 'Beginner',
+                                    color: 'from-orange-500 to-red-500',
+                                    icon: '🔧',
+                                    participants: '2.1k+'
+                                },
+                                {
+                                    title: 'DSA Fundamentals',
+                                    description: 'Build strong foundation in Data Structures and Algorithms',
+                                    category: 'Computer Science',
+                                    difficulty: 'Intermediate',
+                                    color: 'from-blue-500 to-purple-500',
+                                    icon: '💻',
+                                    participants: '3.5k+'
+                                },
+                                {
+                                    title: 'Web Development',
+                                    description: 'Master HTML, CSS, and JavaScript from scratch',
+                                    category: 'Web Development',
+                                    difficulty: 'Beginner',
+                                    color: 'from-pink-500 to-purple-500',
+                                    icon: '🌐',
+                                    participants: '4.2k+'
+                                }
+                            ].map((challenge, index) => (
+                                <motion.div
+                                    key={index}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: index * 0.1 }}
+                                    onClick={() => navigate('/challenges')}
+                                    className="glass-card rounded-xl p-6 hover:shadow-xl transition-all duration-300 cursor-pointer group"
+                                >
+                                    <div className="flex items-start justify-between mb-4">
+                                        <div className={`w-12 h-12 rounded-xl bg-gradient-to-r ${challenge.color} flex items-center justify-center text-2xl group-hover:scale-110 transition-transform`}>
+                                            {challenge.icon}
+                                        </div>
+                                        <div className="flex flex-col items-end gap-2">
+                                            <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                                                challenge.difficulty === 'Beginner' ? 'text-green-400 bg-green-400/10' :
+                                                challenge.difficulty === 'Intermediate' ? 'text-yellow-400 bg-yellow-400/10' :
+                                                'text-red-400 bg-red-400/10'
+                                            }`}>
+                                                {challenge.difficulty}
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
+                                        {challenge.title}
+                                    </h3>
+                                    <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
+                                        {challenge.description}
+                                    </p>
+
+                                    <div className="flex items-center justify-between text-sm">
+                                        <div className="flex items-center gap-1 text-muted-foreground">
+                                            <Calendar className="w-4 h-4" />
+                                            <span>30 Days</span>
+                                        </div>
+                                        <div className="flex items-center gap-1 text-muted-foreground">
+                                            <Users className="w-4 h-4" />
+                                            <span>{challenge.participants}</span>
+                                        </div>
+                                    </div>
+
+                                    <div className="mt-4 pt-4 border-t border-white/10">
+                                        <span className="text-primary font-medium flex items-center gap-1 group-hover:gap-2 transition-all">
+                                            Start Challenge
+                                            <ArrowRight className="w-4 h-4" />
+                                        </span>
+                                    </div>
+                                </motion.div>
+                            ))}
+                        </div>
+
+                        <div className="text-center">
+                            <button
+                                onClick={() => navigate('/challenges')}
+                                className="px-8 py-3 bg-gradient-to-r from-primary to-purple-600 hover:from-primary/90 hover:to-purple-600/90 text-white font-semibold rounded-lg flex items-center gap-2 mx-auto transition-all hover:scale-105"
+                            >
+                                View All Challenges
+                                <Target className="w-5 h-5" />
+                            </button>
+                        </div>
+                    </motion.div>
+                </section>
+
                 {/* DSA PRACTICE SYSTEM */}
                 <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
                     <motion.div
@@ -348,7 +462,7 @@ export default function LandingPage() {
                     </motion.div>
                 </section>
 
-                {/* WHY NXTGENLABS */}
+                {/* WHY NXTGEN ARENA */}
                 <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -460,10 +574,10 @@ export default function LandingPage() {
                         <div>
                             <h4 className="font-semibold mb-4">Platform</h4>
                             <div className="space-y-2 text-sm text-muted-foreground">
-                                <div className="hover:text-foreground cursor-pointer transition-colors">Events</div>
-                                <div className="hover:text-foreground cursor-pointer transition-colors">Roadmaps</div>
-                                <div className="hover:text-foreground cursor-pointer transition-colors">DSA Sheet</div>
-                                <div className="hover:text-foreground cursor-pointer transition-colors">Dashboard</div>
+                                <div className="hover:text-foreground cursor-pointer transition-colors" onClick={() => navigate('/events')}>Events</div>
+                                <div className="hover:text-foreground cursor-pointer transition-colors" onClick={() => navigate('/roadmaps')}>Roadmaps</div>
+                                <div className="hover:text-foreground cursor-pointer transition-colors" onClick={() => navigate('/dsa-sheet')}>DSA Sheet</div>
+                                <div className="hover:text-foreground cursor-pointer transition-colors" onClick={() => navigate('/challenges')}>30-Day Challenges</div>
                             </div>
                         </div>
                         <div>
