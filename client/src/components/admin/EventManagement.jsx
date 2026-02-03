@@ -5,6 +5,7 @@ import {
     Users, Award, Filter, X
 } from 'lucide-react';
 import eventsData from '../../data/events.json';
+import EventForm from './events/EventForm';
 
 export default function EventManagement() {
     const [events, setEvents] = useState(eventsData);
@@ -75,8 +76,8 @@ export default function EventManagement() {
                                 key={status}
                                 onClick={() => setFilterStatus(status)}
                                 className={`px-4 py-2 rounded-lg font-medium text-sm transition-colors capitalize ${filterStatus === status
-                                        ? 'bg-primary text-white'
-                                        : 'bg-white/5 text-muted-foreground hover:bg-white/10'
+                                    ? 'bg-primary text-white'
+                                    : 'bg-white/5 text-muted-foreground hover:bg-white/10'
                                     }`}
                             >
                                 {status}
@@ -180,11 +181,11 @@ export default function EventManagement() {
                 </div>
             )}
 
-            {/* Create/Edit Modal - TODO: Implement full form */}
+            {/* Create/Edit Modal */}
             {(isCreating || editingEvent) && (
                 <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-                    <div className="glass-card rounded-2xl p-6 max-w-2xl w-full max-h-[90vh] overflow-auto">
-                        <div className="flex items-center justify-between mb-6">
+                    <div className="glass-card rounded-2xl p-6 max-w-4xl w-full max-h-[90vh] overflow-hidden flex flex-col">
+                        <div className="flex items-center justify-between mb-6 shrink-0">
                             <h3 className="text-2xl font-bold">
                                 {isCreating ? 'Create New Event' : 'Edit Event'}
                             </h3>
@@ -198,10 +199,25 @@ export default function EventManagement() {
                                 <X className="w-5 h-5" />
                             </button>
                         </div>
-                        <p className="text-muted-foreground mb-4">
-                            Event creation form will be implemented here with all fields
-                        </p>
-                        {/* TODO: Add full event form */}
+
+                        <div className="flex-1 overflow-hidden">
+                            <EventForm
+                                initialData={editingEvent}
+                                onSubmit={(formData) => {
+                                    if (isCreating) {
+                                        setEvents([...events, { ...formData, id: Date.now().toString() }]);
+                                    } else {
+                                        setEvents(events.map(e => e.id === editingEvent.id ? { ...formData, id: e.id } : e));
+                                    }
+                                    setIsCreating(false);
+                                    setEditingEvent(null);
+                                }}
+                                onCancel={() => {
+                                    setIsCreating(false);
+                                    setEditingEvent(null);
+                                }}
+                            />
+                        </div>
                     </div>
                 </div>
             )}

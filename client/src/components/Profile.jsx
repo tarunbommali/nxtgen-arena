@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
-import { db } from '../lib/firebase';
-import { doc, updateDoc, serverTimestamp } from 'firebase/firestore';
+import { userAPI } from '../services/api';
 import { motion } from 'framer-motion';
 import { Loader2, Save, User as UserIcon } from 'lucide-react';
 import { skillsOptions } from '../data/challenges';
@@ -59,15 +58,13 @@ export default function Profile() {
         e.preventDefault();
         setSubmitting(true);
         try {
-            const userRef = doc(db, "users", currentUser.uid);
-            const updatedData = {
-                ...formData,
-                lastProfileUpdate: serverTimestamp()
-            };
-
-            await updateDoc(userRef, updatedData);
-            setUserData(prev => ({ ...prev, ...updatedData }));
-            alert("Profile Updated Successfully!");
+            const { data } = await userAPI.updateProfile(formData);
+            if (data.success) {
+                setUserData(prev => ({ ...prev, ...data.data.user }));
+                alert("Profile Updated Successfully!");
+            } else {
+                alert(data.message || "Failed to update profile.");
+            }
         } catch (error) {
             console.error("Error updating profile:", error);
             alert("Failed to update profile.");

@@ -163,6 +163,13 @@ model Event {
   // Challenges
   hasChallenges           Boolean   @default(false) @map("has_challenges")
   problemCount            Int       @default(0) @map("problem_count")
+
+  // Dynamic Content Sections
+  jury                    Json?     // Array of {name, role, company, image, linkedin}
+  mentors                 Json?     // Array of {name, expertise, company, image, linkedin}
+  partners                Json?     // Array of {name, type, logo, website}
+  faqs                    Json?     // Array of {question, answer}
+  schedule                Json?     // Array of {time, title, description, type}
   
   // Admin
   createdBy               String?   @map("created_by")

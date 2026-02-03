@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
-import { auth, db, googleProvider } from "../lib/firebase";
+import { auth, googleProvider } from "../lib/firebase";
 import { signInWithPopup, signOut, onAuthStateChanged } from "firebase/auth";
-import { doc, getDoc, setDoc, updateDoc, arrayUnion, serverTimestamp } from "firebase/firestore";
+import { authAPI } from "../services/api";
 
 const AuthContext = createContext();
 
@@ -17,28 +17,16 @@ export function AuthProvider({ children }) {
     async function login() {
         try {
             const result = await signInWithPopup(auth, googleProvider);
-            // Check if user exists in DB, if not create
-            const userRef = doc(db, "users", result.user.uid);
-            const userSnap = await getDoc(userRef);
+            const token = await result.user.getIdToken();
 
-            if (!userSnap.exists()) {
-                const enrollmentDate = new Date().toISOString();
-                await setDoc(userRef, {
-                    uid: result.user.uid,
-                    email: result.user.email,
-                    displayName: result.user.displayName,
-                    photoURL: result.user.photoURL,
-                    currentDay: 1, // Day 1 unlocked on enrollment
-                    enrollmentDate: enrollmentDate,
-                    completedDays: [],
-                    streak: 0,
-                    lastLogin: serverTimestamp(),
-                    createdAt: serverTimestamp()
-                });
-            } else {
-                // Update last login
-                await updateDoc(userRef, { lastLogin: serverTimestamp() });
+            // Exchange Firebase Token for Backend JWT
+            const response = await authAPI.googleLogin({ token });
+
+            if (response.data.success) {
+                localStorage.setItem('token', response.data.token);
+                setUserData(response.data.user);
             }
+
             return result.user;
         } catch (error) {
             console.error("Login failed", error);
@@ -47,92 +35,19 @@ export function AuthProvider({ children }) {
     }
 
     function logout() {
+        localStorage.removeItem('token');
         return signOut(auth);
     }
 
+    // TODO: Move these to backend API calls via services when progress features are fully backend-integrated
     async function startChallenge() {
-        if (!currentUser) return;
-        const userRef = doc(db, "users", currentUser.uid);
-        const enrollmentDate = new Date().toISOString();
-        await updateDoc(userRef, {
-            currentDay: 1, // Unlock Day 1
-            enrollmentDate: enrollmentDate,
-            startedAt: serverTimestamp()
-        });
-        setUserData(prev => ({ ...prev, currentDay: 1, enrollmentDate }));
+        console.log("startChallenge: Logic should be moved to backend API");
+        // Example: await progressAPI.startChallenge();
     }
 
     async function markDayComplete(dayId) {
-        if (!currentUser) return;
-
-        // Only allow marking days that are currently unlocked by time
-        const currentData = userData;
-        if (dayId > currentData.currentDay) {
-            console.log("Cannot mark future day as complete - not yet unlocked by time");
-            return;
-        }
-
-        const userRef = doc(db, "users", currentUser.uid);
-        const now = new Date();
-        let newStreak = currentData.streak || 0;
-
-        if (currentData.lastActivity) {
-            const lastActivityDate = currentData.lastActivity.toDate ? currentData.lastActivity.toDate() : new Date(currentData.lastActivity);
-            const diffTime = Math.abs(now - lastActivityDate);
-            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-
-            if (diffDays === 1) {
-                // Completed yesterday, increment streak
-                newStreak += 1;
-            } else if (diffDays > 1) {
-                // Formatting break, reset to 1
-                newStreak = 1;
-            }
-            // If diffDays is 0 (same day), streak remains same
-        } else {
-            // First activity ever
-            newStreak = 1;
-        }
-
-        await updateDoc(userRef, {
-            completedDays: arrayUnion(dayId),
-            lastActivity: serverTimestamp(),
-            streak: newStreak
-        });
-
-        setUserData(prev => ({
-            ...prev,
-            completedDays: [...(prev.completedDays || []), dayId],
-            streak: newStreak,
-            lastActivity: now
-            // currentDay is NOT incremented here - it's based on enrollment date
-        }));
-    }
-
-    async function ensureUserDoc(user) {
-        const userRef = doc(db, "users", user.uid);
-        const snap = await getDoc(userRef);
-
-        if (snap.exists()) {
-            setUserData(snap.data());
-        } else {
-            // Self-repair: Create missing document
-            const enrollmentDate = new Date().toISOString();
-            const newUserData = {
-                uid: user.uid,
-                email: user.email,
-                displayName: user.displayName,
-                photoURL: user.photoURL,
-                currentDay: 1, // Day 1 unlocked on enrollment
-                enrollmentDate: enrollmentDate,
-                completedDays: [],
-                streak: 0,
-                lastLogin: serverTimestamp(),
-                createdAt: serverTimestamp()
-            };
-            await setDoc(userRef, newUserData);
-            setUserData(newUserData);
-        }
+        console.log("markDayComplete: Logic should be moved to backend API", dayId);
+        // Example: await progressAPI.markDayComplete(dayId);
     }
 
     useEffect(() => {
@@ -140,13 +55,20 @@ export function AuthProvider({ children }) {
             setCurrentUser(user);
             if (user) {
                 try {
-                    await ensureUserDoc(user);
+                    // Sync with backend on reload
+                    const token = await user.getIdToken();
+                    const response = await authAPI.googleLogin({ token });
+
+                    if (response.data.success) {
+                        localStorage.setItem('token', response.data.token);
+                        setUserData(response.data.user);
+                    }
                 } catch (err) {
-                    console.error("Error fetching/creating user data:", err);
-                    // Fallback for UI to show something went wrong
-                    setUserData({ error: err.message });
+                    console.error("Error syncing user data:", err);
+                    setUserData(null);
                 }
             } else {
+                localStorage.removeItem('token');
                 setUserData(null);
             }
             setLoading(false);
@@ -156,8 +78,8 @@ export function AuthProvider({ children }) {
     }, []);
 
     const value = {
-        currentUser,
-        userData,
+        currentUser, // Firebase User
+        userData,    // MySQL User Data
         setUserData,
         login,
         logout,
